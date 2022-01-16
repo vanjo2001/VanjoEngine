@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		872F51622789B9D100F1312A /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F51612789B9D100F1312A /* Math.swift */; };
+		877BD5BD277C4A3600DD9CD9 /* BasicMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5BC277C4A3600DD9CD9 /* BasicMesh.swift */; };
+		877BD5C0277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5BF277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift */; };
+		877BD5C3277CAA7100DD9CD9 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5C2277CAA7100DD9CD9 /* Shader.metal */; };
+		877BD5C7277CF9A300DD9CD9 /* RenderPipelineStateBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5C6277CF9A300DD9CD9 /* RenderPipelineStateBuilder.swift */; };
+		877BD5C9277CFA1D00DD9CD9 /* MTLFunctionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5C8277CFA1D00DD9CD9 /* MTLFunctionBuilder.swift */; };
+		877BD5CB277D14E300DD9CD9 /* VertexDescriptorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5CA277D14E300DD9CD9 /* VertexDescriptorBuilder.swift */; };
+		87815EA5277A5888001A62B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87815EA4277A5888001A62B2 /* AppDelegate.swift */; };
+		87815EA7277A5888001A62B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87815EA6277A5888001A62B2 /* SceneDelegate.swift */; };
+		87815EA9277A5888001A62B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87815EA8277A5888001A62B2 /* ViewController.swift */; };
+		87815EAE277A588A001A62B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87815EAD277A588A001A62B2 /* Assets.xcassets */; };
+		87815EB1277A588A001A62B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87815EAF277A588A001A62B2 /* LaunchScreen.storyboard */; };
+		87815EBB277A5A8B001A62B2 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87815EBA277A5A8B001A62B2 /* Renderer.swift */; };
+		87815EC0277A5F15001A62B2 /* VanjoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87815EBF277A5F15001A62B2 /* VanjoEngine.swift */; };
+		87948EC9279489640003987A /* SceneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87948EC8279489640003987A /* SceneNode.swift */; };
+		87948ECB2794896B0003987A /* CameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87948ECA2794896B0003987A /* CameraNode.swift */; };
+		87948ECD279489770003987A /* GameNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87948ECC279489770003987A /* GameNode.swift */; };
+		879833FA278B3A92002B1DD1 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879833F9278B3A92002B1DD1 /* Node.swift */; };
+		87C16CA427809001006926DA /* BasicMeshBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C16CA327809001006926DA /* BasicMeshBuilder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		872F51612789B9D100F1312A /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		877BD5BC277C4A3600DD9CD9 /* BasicMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMesh.swift; sourceTree = "<group>"; };
+		877BD5BF277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineDescriptorBuilder.swift; sourceTree = "<group>"; };
+		877BD5C2277CAA7100DD9CD9 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
+		877BD5C6277CF9A300DD9CD9 /* RenderPipelineStateBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStateBuilder.swift; sourceTree = "<group>"; };
+		877BD5C8277CFA1D00DD9CD9 /* MTLFunctionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLFunctionBuilder.swift; sourceTree = "<group>"; };
+		877BD5CA277D14E300DD9CD9 /* VertexDescriptorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptorBuilder.swift; sourceTree = "<group>"; };
+		87815EA1277A5888001A62B2 /* VanjoEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VanjoEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87815EA4277A5888001A62B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		87815EA6277A5888001A62B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		87815EA8277A5888001A62B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		87815EAD277A588A001A62B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87815EB0277A588A001A62B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87815EB2277A588A001A62B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87815EBA277A5A8B001A62B2 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		87815EBF277A5F15001A62B2 /* VanjoEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VanjoEngine.swift; sourceTree = "<group>"; };
+		87948EC8279489640003987A /* SceneNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneNode.swift; path = ../../../../../.Trash/SceneNode.swift; sourceTree = "<group>"; };
+		87948ECA2794896B0003987A /* CameraNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraNode.swift; path = ../../../../../.Trash/CameraNode.swift; sourceTree = "<group>"; };
+		87948ECC279489770003987A /* GameNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameNode.swift; path = ../../../../../.Trash/GameNode.swift; sourceTree = "<group>"; };
+		879833F9278B3A92002B1DD1 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		87C16CA327809001006926DA /* BasicMeshBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMeshBuilder.swift; sourceTree = "<group>"; };
+		87C16CA527824E37006926DA /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87815E9E277A5888001A62B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		872F51632789B9DE00F1312A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				872F51612789B9D100F1312A /* Math.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		877BD5BB277C4A1F00DD9CD9 /* Mesh */ = {
+			isa = PBXGroup;
+			children = (
+				877BD5BC277C4A3600DD9CD9 /* BasicMesh.swift */,
+				87C16CA327809001006926DA /* BasicMeshBuilder.swift */,
+			);
+			path = Mesh;
+			sourceTree = "<group>";
+		};
+		877BD5BE277C752A00DD9CD9 /* Descriptors */ = {
+			isa = PBXGroup;
+			children = (
+				877BD5BF277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift */,
+				877BD5C6277CF9A300DD9CD9 /* RenderPipelineStateBuilder.swift */,
+				877BD5C8277CFA1D00DD9CD9 /* MTLFunctionBuilder.swift */,
+				877BD5CA277D14E300DD9CD9 /* VertexDescriptorBuilder.swift */,
+			);
+			path = Descriptors;
+			sourceTree = "<group>";
+		};
+		877BD5C1277CA86C00DD9CD9 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				877BD5C2277CAA7100DD9CD9 /* Shader.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		87815E98277A5887001A62B2 = {
+			isa = PBXGroup;
+			children = (
+				87815EA3277A5888001A62B2 /* VanjoEngine */,
+				87815EA2277A5888001A62B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87815EA2277A5888001A62B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87815EA1277A5888001A62B2 /* VanjoEngine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87815EA3277A5888001A62B2 /* VanjoEngine */ = {
+			isa = PBXGroup;
+			children = (
+				87815EA4277A5888001A62B2 /* AppDelegate.swift */,
+				87815EA6277A5888001A62B2 /* SceneDelegate.swift */,
+				87815EA8277A5888001A62B2 /* ViewController.swift */,
+				87815EB8277A5A42001A62B2 /* Source */,
+				87815EAD277A588A001A62B2 /* Assets.xcassets */,
+				87815EAF277A588A001A62B2 /* LaunchScreen.storyboard */,
+				87815EB2277A588A001A62B2 /* Info.plist */,
+			);
+			path = VanjoEngine;
+			sourceTree = "<group>";
+		};
+		87815EB8277A5A42001A62B2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				87815EBE277A5E61001A62B2 /* Engine */,
+				879833F8278B39C7002B1DD1 /* GameStuff */,
+				87815EB9277A5A78001A62B2 /* Renderer */,
+				877BD5BB277C4A1F00DD9CD9 /* Mesh */,
+				877BD5C1277CA86C00DD9CD9 /* Shaders */,
+				877BD5BE277C752A00DD9CD9 /* Descriptors */,
+				872F51632789B9DE00F1312A /* Extensions */,
+				87C16CA527824E37006926DA /* Common.h */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		87815EB9277A5A78001A62B2 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				87815EBA277A5A8B001A62B2 /* Renderer.swift */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		87815EBE277A5E61001A62B2 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				87815EBF277A5F15001A62B2 /* VanjoEngine.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		879833F8278B39C7002B1DD1 /* GameStuff */ = {
+			isa = PBXGroup;
+			children = (
+				879833F9278B3A92002B1DD1 /* Node.swift */,
+				87948ECC279489770003987A /* GameNode.swift */,
+				87948ECA2794896B0003987A /* CameraNode.swift */,
+				87948EC8279489640003987A /* SceneNode.swift */,
+			);
+			path = GameStuff;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87815EA0277A5888001A62B2 /* VanjoEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87815EB5277A588A001A62B2 /* Build configuration list for PBXNativeTarget "VanjoEngine" */;
+			buildPhases = (
+				87815E9D277A5888001A62B2 /* Sources */,
+				87815E9E277A5888001A62B2 /* Frameworks */,
+				87815E9F277A5888001A62B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VanjoEngine;
+			productName = VanjoEngine;
+			productReference = 87815EA1277A5888001A62B2 /* VanjoEngine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87815E99277A5887001A62B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					87815EA0277A5888001A62B2 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 87815E9C277A5887001A62B2 /* Build configuration list for PBXProject "VanjoEngine" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87815E98277A5887001A62B2;
+			productRefGroup = 87815EA2277A5888001A62B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87815EA0277A5888001A62B2 /* VanjoEngine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87815E9F277A5888001A62B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87815EB1277A588A001A62B2 /* LaunchScreen.storyboard in Resources */,
+				87815EAE277A588A001A62B2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87815E9D277A5888001A62B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87815EC0277A5F15001A62B2 /* VanjoEngine.swift in Sources */,
+				87948EC9279489640003987A /* SceneNode.swift in Sources */,
+				872F51622789B9D100F1312A /* Math.swift in Sources */,
+				877BD5C9277CFA1D00DD9CD9 /* MTLFunctionBuilder.swift in Sources */,
+				877BD5BD277C4A3600DD9CD9 /* BasicMesh.swift in Sources */,
+				87C16CA427809001006926DA /* BasicMeshBuilder.swift in Sources */,
+				87815EBB277A5A8B001A62B2 /* Renderer.swift in Sources */,
+				87815EA9277A5888001A62B2 /* ViewController.swift in Sources */,
+				877BD5C3277CAA7100DD9CD9 /* Shader.metal in Sources */,
+				877BD5CB277D14E300DD9CD9 /* VertexDescriptorBuilder.swift in Sources */,
+				87948ECD279489770003987A /* GameNode.swift in Sources */,
+				87948ECB2794896B0003987A /* CameraNode.swift in Sources */,
+				877BD5C7277CF9A300DD9CD9 /* RenderPipelineStateBuilder.swift in Sources */,
+				877BD5C0277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift in Sources */,
+				87815EA5277A5888001A62B2 /* AppDelegate.swift in Sources */,
+				87815EA7277A5888001A62B2 /* SceneDelegate.swift in Sources */,
+				879833FA278B3A92002B1DD1 /* Node.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		87815EAF277A588A001A62B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87815EB0277A588A001A62B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87815EB3277A588A001A62B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = VanjoEngine/Source/Common.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		87815EB4277A588A001A62B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = VanjoEngine/Source/Common.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87815EB6277A588A001A62B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22K22HCZ8Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VanjoEngine/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vanjo.VanjoEngine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87815EB7277A588A001A62B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22K22HCZ8Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VanjoEngine/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vanjo.VanjoEngine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87815E9C277A5887001A62B2 /* Build configuration list for PBXProject "VanjoEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87815EB3277A588A001A62B2 /* Debug */,
+				87815EB4277A588A001A62B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87815EB5277A588A001A62B2 /* Build configuration list for PBXNativeTarget "VanjoEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87815EB6277A588A001A62B2 /* Debug */,
+				87815EB7277A588A001A62B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87815E99277A5887001A62B2 /* Project object */;
+}
