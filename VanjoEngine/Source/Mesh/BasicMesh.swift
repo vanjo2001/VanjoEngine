@@ -22,12 +22,6 @@ extension BasicMeshProtocol {
 }
 
 
-protocol Dynamicable {
-    var mass: Float { get set }
-    var velocity: simd_float2 { get set }
-}
-
-
 class BasicMesh: BasicMeshProtocol {
     
     var vertices: [Vertex] = []
@@ -111,7 +105,7 @@ class FlowerMesh: BasicMesh {
     }
 }
 
-class Particle: BasicMesh, Dynamicable {
+class Particle: BasicMesh {
     var mass: Float = 1.0
     var velocity = simd_float2(0, 0)
     

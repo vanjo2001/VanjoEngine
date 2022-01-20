@@ -31,11 +31,4 @@ class BasicMeshBuilder {
             return FlowerMesh()
         }
     }
-    
-    func makeMesh(for type: DynamicShape) -> BasicMeshProtocol & Dynamicable {
-        switch type {
-        case .particle:
-            return Particle()
-        }
-    }
 }

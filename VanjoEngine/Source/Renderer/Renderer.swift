@@ -12,7 +12,7 @@ final class Renderer: NSObject, MTKViewDelegate {
     
     private(set) var engine = VanjoEngine.shared
     
-    private var scene = SceneNode()
+    private var scene = SandboxScene()
     
     override init() {
         super.init()
@@ -45,40 +45,5 @@ final class Renderer: NSObject, MTKViewDelegate {
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(currentDrawable)
         commandBuffer?.commit()
-        
-        /*
-        character.scale = simd_float2(0.1, 0.1)
-        
-        let G: Float = 9.81
-        
-        
-        if abs(character.position.y) > 1 - 0.1 {
-            
-            if -character.velocity.y < 1 {
-                character.velocity.y = 0
-            } else {
-                character.velocity.y = -character.velocity.y
-            }
-            print("MARK", character.velocity.y)
-        } //else {
-            let force = simd_float2(0, character.mass * -G)
-            let acceleration = simd_float2(force.x / character.mass, force.y / character.mass)
-            
-            character.velocity.x += acceleration.x * dt
-            character.velocity.y += acceleration.y * dt
-        //}
-
-        let aspect = Float(view.frame.width / view.frame.height)
-        let normalisedX = -aspect + 0.1
-        
-        character.position.x = normalisedX
-        character.position.y += character.velocity.y * dt
-        
-        
-        character.render(
-            currentRenderPassDescriptor: currentRenderPassDescriptor,
-            currentDrawable: currentDrawable
-        )
-         */
     }
 }

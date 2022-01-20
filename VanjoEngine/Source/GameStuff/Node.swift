@@ -7,8 +7,14 @@
 
 import Foundation
 
+protocol Nodable: AnyObject {
+    var position: simd_float2 { get set }
+    var scale: simd_float2 { get set }
+    var rotation: Float { get set }
+}
 
-class Node {
+
+class Node: Nodable {
     var parent: Node?
     var children: [Node] = []
     
@@ -42,5 +48,6 @@ class Node {
     }
     
     func update(deltaTime: Float) {
+        fatalError("USE ANCESSTORS!!!")
     }
 }
