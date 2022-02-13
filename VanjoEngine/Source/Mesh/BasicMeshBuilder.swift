@@ -11,7 +11,6 @@ class BasicMeshBuilder {
     enum BasicShape {
         case triangle
         case square
-        case flower
         case circle(segments: Int)
     }
     
@@ -27,8 +26,6 @@ class BasicMeshBuilder {
             return SquareMesh()
         case .circle(let segments):
             return CircleMesh(segments: segments)
-        case .flower:
-            return FlowerMesh()
         }
     }
 }

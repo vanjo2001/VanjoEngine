@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ModelIO
 
 protocol Nodable: AnyObject {
     var position: simd_float2 { get set }

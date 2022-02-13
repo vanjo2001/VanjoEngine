@@ -26,6 +26,8 @@
 		87815EB1277A588A001A62B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87815EAF277A588A001A62B2 /* LaunchScreen.storyboard */; };
 		87815EBB277A5A8B001A62B2 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87815EBA277A5A8B001A62B2 /* Renderer.swift */; };
 		87815EC0277A5F15001A62B2 /* VanjoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87815EBF277A5F15001A62B2 /* VanjoEngine.swift */; };
+		878DE5AE2799D9C5001BA77C /* CollisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DE5AD2799D9C5001BA77C /* CollisionController.swift */; };
+		878DE5B02799E341001BA77C /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DE5AF2799E341001BA77C /* InputController.swift */; };
 		879833FA278B3A92002B1DD1 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879833F9278B3A92002B1DD1 /* Node.swift */; };
 		87C16CA427809001006926DA /* BasicMeshBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C16CA327809001006926DA /* BasicMeshBuilder.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,8 @@
 		87815EBF277A5F15001A62B2 /* VanjoEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VanjoEngine.swift; sourceTree = "<group>"; };
 		878A53662796127F00B05D82 /* SceneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneNode.swift; sourceTree = "<group>"; };
 		878A53692796130900B05D82 /* CameraNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNode.swift; sourceTree = "<group>"; };
+		878DE5AD2799D9C5001BA77C /* CollisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionController.swift; sourceTree = "<group>"; };
+		878DE5AF2799E341001BA77C /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		879833F9278B3A92002B1DD1 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		87C16CA327809001006926DA /* BasicMeshBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMeshBuilder.swift; sourceTree = "<group>"; };
 		87C16CA527824E37006926DA /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -146,8 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				87815EBE277A5E61001A62B2 /* Engine */,
-				879833F8278B39C7002B1DD1 /* GameStuff */,
 				87815EB9277A5A78001A62B2 /* Renderer */,
+				878DE5AC2799D990001BA77C /* Controllers */,
+				879833F8278B39C7002B1DD1 /* GameStuff */,
 				877BD5BB277C4A1F00DD9CD9 /* Mesh */,
 				877BD5C1277CA86C00DD9CD9 /* Shaders */,
 				877BD5BE277C752A00DD9CD9 /* Descriptors */,
@@ -189,6 +194,15 @@
 				87359118279615B50023D18F /* SandboxCamera.swift */,
 			);
 			path = Cameras;
+			sourceTree = "<group>";
+		};
+		878DE5AC2799D990001BA77C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				878DE5AD2799D9C5001BA77C /* CollisionController.swift */,
+				878DE5AF2799E341001BA77C /* InputController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		879833F8278B39C7002B1DD1 /* GameStuff */ = {
@@ -280,6 +294,8 @@
 				87815EBB277A5A8B001A62B2 /* Renderer.swift in Sources */,
 				87815EA9277A5888001A62B2 /* ViewController.swift in Sources */,
 				877BD5C3277CAA7100DD9CD9 /* Shader.metal in Sources */,
+				878DE5AE2799D9C5001BA77C /* CollisionController.swift in Sources */,
+				878DE5B02799E341001BA77C /* InputController.swift in Sources */,
 				877BD5CB277D14E300DD9CD9 /* VertexDescriptorBuilder.swift in Sources */,
 				877BD5C7277CF9A300DD9CD9 /* RenderPipelineStateBuilder.swift in Sources */,
 				87359114279613F80023D18F /* CameraNode.swift in Sources */,

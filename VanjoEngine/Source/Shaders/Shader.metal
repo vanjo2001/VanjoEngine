@@ -22,7 +22,11 @@ struct VertexOut {
 
 
 
-vertex VertexOut vertex_func(Vertex vert [[ stage_in ]], constant Uniforms &uniforms [[ buffer(1) ]]) {
+vertex VertexOut vertex_func(
+                             Vertex vert [[ stage_in ]],
+                             constant Uniforms &uniforms [[ buffer(1) ]],
+                             unsigned int vid [[ vertex_id ]]
+) {
     VertexOut out;
     
     out.position = uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix * vert.position;

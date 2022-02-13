@@ -7,10 +7,14 @@
 
 import Foundation
 import Metal
+import CoreGraphics
 
 
-
-class SceneNode: Node {
+class SceneNode: Node, InputControllerDelegate {
+    
+    private(set) var sceneSize: CGSize = .zero
+    
+    private(set) var borders: [Border] = [.xBorder(), .yBorder()]
     
     var nodes: [Node] = []
     
@@ -47,9 +51,47 @@ class SceneNode: Node {
     }
     
     
-    func drawableSizeWillChange(aspectRatio: Float) {
+    func drawableSizeWillChange(aspectRatio: Float, actualSize: CGSize) {
+        sceneSize = actualSize
         cameras.forEach {
             $0.aspectRatio = aspectRatio
+        }
+        
+        recalculateBorders(aspectRatio: aspectRatio)
+    }
+    
+    private func recalculateBorders(aspectRatio: Float) {
+        borders = [.xBorder(.reverse(-aspectRatio, aspectRatio)), .yBorder(.reverse(1, -1))]
+    }
+    
+    func didTouch(for point: CGPoint) {
+    }
+    
+    func gpuDidRenderFrame() {
+    }
+    
+    
+    enum Border: CustomStringConvertible {
+        
+        case xBorder(Mode = .infinity)
+        case yBorder(Mode = .infinity)
+        case zBorder(Mode = .infinity)
+        
+        enum Mode {
+            case infinity
+            case solid(Float, Float)
+            case reverse(Float, Float)
+        }
+        
+        var description: String {
+            switch self {
+            case .xBorder(_):
+                return "xBorder"
+            case .yBorder(_):
+                return "yBorder"
+            case .zBorder(_):
+                return "zBorder"
+            }
         }
     }
 }

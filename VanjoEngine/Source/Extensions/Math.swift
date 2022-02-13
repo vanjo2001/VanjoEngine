@@ -46,6 +46,14 @@ extension matrix_float4x4 {
     }
 }
 
+extension matrix_float4x4 {
+    
+    var position: simd_float4 {
+        return simd_float4(columns.3.x, columns.3.y, columns.3.z, 0)
+    }
+}
+
+
 extension Float {
     var radians: Float {
         (self / 180.0) * .pi

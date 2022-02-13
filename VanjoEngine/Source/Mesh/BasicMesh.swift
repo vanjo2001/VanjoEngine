@@ -88,47 +88,6 @@ class CircleMesh: BasicMesh {
     }
 }
 
-class FlowerMesh: BasicMesh {
-    
-    override fileprivate func makeVertecies() -> [Vertex] {
-        var verices = [Vertex]()
-        
-        for oneDegree in stride(from: Float(0), to: .pi * 2, by: .pi / 8) {
-            verices.append(contentsOf: [
-                Vertex(position: simd_float4(cos(oneDegree), sin(oneDegree), 0, 1), color: simd_float4(0, 0, 0.6, 1)),
-                Vertex(position: simd_float4(cos(oneDegree * 45), sin(oneDegree * 45), 0, 1), color: simd_float4(0, 0.3, 0, 1)),
-                Vertex(position: simd_float4(0, 0, 0, 1), color: simd_float4(0.9, 0, 0, 1)),
-            ])
-        }
-        
-        return verices
-    }
-}
-
-class Particle: BasicMesh {
-    var mass: Float = 1.0
-    var velocity = simd_float2(0, 0)
-    
-    override fileprivate func makeVertecies() -> [Vertex] {
-        var verices = [Vertex]()
-
-        let byValue: Float = .pi * 2 / Float(8) // 45 degrees
-        var previous: Float = 0
-
-        for degrees in stride(from: 0, to: .pi * 2, by: byValue) {
-            previous = degrees
-            verices.append(contentsOf: [
-                Vertex(position: simd_float4(cos(previous), sin(previous), 0, 1), color: simd_float4(0, 0, 0.6, 1)),
-                Vertex(position: simd_float4(cos(previous + byValue), sin(previous + byValue), 0, 1), color: simd_float4(0, 0.3, 0, 1)),
-                Vertex(position: simd_float4(0, 0, 0, 1), color: simd_float4(0.9, 0, 0, 1)),
-            ])
-        }
-
-        return verices
-    }
-    
-}
-
 struct Vertex {
     var position: simd_float4
     var color: simd_float4

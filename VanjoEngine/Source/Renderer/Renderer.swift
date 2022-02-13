@@ -11,16 +11,24 @@ import MetalKit
 final class Renderer: NSObject, MTKViewDelegate {
     
     private(set) var engine = VanjoEngine.shared
+    private(set) var inputController = InputController()
+    
+    private lazy var collisionController: CollisionController = {
+        let controller = CollisionController(nodes: [scene] + scene.nodes)
+        return controller
+    }()
     
     private var scene = SandboxScene()
     
     override init() {
         super.init()
+        
+        inputController.delegate = scene
     }
     
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        scene.drawableSizeWillChange(aspectRatio: Float(size.width / size.height))
+        scene.drawableSizeWillChange(aspectRatio: Float(size.width / size.height), actualSize: view.frame.size)
     }
     
     func draw(in view: MTKView) {
@@ -38,12 +46,17 @@ final class Renderer: NSObject, MTKViewDelegate {
         
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: currentRenderPassDescriptor)
         
+        collisionController.detectSceneCollision()
         scene.update(deltaTime: dt)
         scene.renderScene(renderEncoder: renderCommandEncoder)
         
-        
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(currentDrawable)
+        
+        commandBuffer?.addCompletedHandler { [weak self] _ in
+            self?.scene.gpuDidRenderFrame()
+        }
+        
         commandBuffer?.commit()
     }
 }
