@@ -10,10 +10,12 @@ import Metal
 import simd
 
 
+public enum VertexDescriptor {
+    case basic
+    case point
+}
+
 class VertexDescriptorBuilder {
-    enum VertexDescriptor {
-        case basic
-    }
     
     func makeDescriptor(for type: VertexDescriptor) -> MTLVertexDescriptor {
         let descriptor = MTLVertexDescriptor()

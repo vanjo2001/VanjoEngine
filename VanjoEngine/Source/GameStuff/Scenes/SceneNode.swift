@@ -10,13 +10,11 @@ import Metal
 import CoreGraphics
 
 
-class SceneNode: Node, InputControllerDelegate {
+class SceneNode: Node, InputControllerDelegate, CollisionControllerDelegate {
     
     private(set) var sceneSize: CGSize = .zero
     
-    private(set) var borders: [Border] = [.xBorder(), .yBorder()]
-    
-    var nodes: [Node] = []
+    private(set) var borders: [Border] = [.xBorder(.reverse(-1, 1)), .yBorder(.reverse(-1, 1))]
     
     var cameras: [CameraNode] = []
     
@@ -36,12 +34,12 @@ class SceneNode: Node, InputControllerDelegate {
     }
     
     override func update(deltaTime: Float) {
-        nodes.forEach { $0.update(deltaTime: deltaTime) }
+        children.forEach { $0.update(deltaTime: deltaTime) }
         cameras.forEach { $0.update(deltaTime: deltaTime) }
     }
     
     func renderScene(renderEncoder: MTLRenderCommandEncoder?) {
-        for node in nodes {
+        for node in children {
             node.uniforms.viewMatrix = camera.uniforms.viewMatrix
             node.uniforms.projectionMatrix = camera.uniforms.projectionMatrix
             if let node = node as? Renderable {
@@ -56,15 +54,6 @@ class SceneNode: Node, InputControllerDelegate {
         cameras.forEach {
             $0.aspectRatio = aspectRatio
         }
-        
-        recalculateBorders(aspectRatio: aspectRatio)
-    }
-    
-    private func recalculateBorders(aspectRatio: Float) {
-        borders = [.xBorder(.reverse(-aspectRatio, aspectRatio)), .yBorder(.reverse(1, -1))]
-    }
-    
-    func didTouch(for point: CGPoint) {
     }
     
     func gpuDidRenderFrame() {
@@ -94,4 +83,13 @@ class SceneNode: Node, InputControllerDelegate {
             }
         }
     }
+    
+    
+    // MARK: - Delegates Implementations
+    
+    /// You can override this mehtod to handle touch events. The default implementation does nothing
+    func didTouch(for point: CGPoint) {}
+    
+    /// You can override this mehtod to handle collision nodes with scene borders. The default implementation does nothing
+    func detected(collisions: [Collidable], _ axis: Border) {}
 }

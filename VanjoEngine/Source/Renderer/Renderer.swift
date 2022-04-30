@@ -14,7 +14,8 @@ final class Renderer: NSObject, MTKViewDelegate {
     private(set) var inputController = InputController()
     
     private lazy var collisionController: CollisionController = {
-        let controller = CollisionController(nodes: [scene] + scene.nodes)
+        let controller = CollisionController(nodes: [scene] + scene.children)
+        controller.delegate = scene
         return controller
     }()
     
@@ -46,11 +47,12 @@ final class Renderer: NSObject, MTKViewDelegate {
         
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: currentRenderPassDescriptor)
         
-        collisionController.detectSceneCollision()
         scene.update(deltaTime: dt)
         scene.renderScene(renderEncoder: renderCommandEncoder)
+        collisionController.detectSceneCollision()
         
         renderCommandEncoder?.endEncoding()
+        
         commandBuffer?.present(currentDrawable)
         
         commandBuffer?.addCompletedHandler { [weak self] _ in

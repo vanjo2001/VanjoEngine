@@ -5,18 +5,13 @@
 //  Created by Vanjo Lutik on 01.01.2022.
 //
 
-import Foundation
+public enum BasicShape {
+    case triangle
+    case square
+    case circle(segments: Int)
+}
 
 class BasicMeshBuilder {
-    enum BasicShape {
-        case triangle
-        case square
-        case circle(segments: Int)
-    }
-    
-    enum DynamicShape {
-        case particle
-    }
     
     func makeMesh(for type: BasicShape) -> BasicMesh {
         switch type {

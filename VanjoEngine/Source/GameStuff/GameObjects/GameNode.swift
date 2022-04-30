@@ -49,11 +49,13 @@ extension Dynamicable {
 protocol Collidable: Nodable {
     var physicBox: MDLAxisAlignedBoundingBox { get }
     var size: simd_float3 { get }
+    
+    var collidablePosition: simd_float4 { get }
 }
 
 extension Collidable {
     var size: simd_float3 {
-        return (physicBox.maxBounds - physicBox.minBounds) * simd_float3(scale.x, scale.y, 1)
+        return physicBox.maxBounds - physicBox.minBounds
     }
 }
 
@@ -76,19 +78,35 @@ class GameNode: Node, Dynamicable, Collidable {
     lazy var physicBox: MDLAxisAlignedBoundingBox = {
         var box = MDLAxisAlignedBoundingBox()
         
-        var maxX = mesh.vertices.map { $0.position.x }.max() ?? 0.0
-        var maxY = mesh.vertices.map { $0.position.y }.max() ?? 0.0
-        var maxZ = mesh.vertices.map { $0.position.z }.max() ?? 0.0
+        let xAxeValues = mesh.vertices.map { $0.position.x }
+        let yAxeValues = mesh.vertices.map { $0.position.y }
+        let zAxeValues = mesh.vertices.map { $0.position.z }
         
-        var minX = mesh.vertices.map { $0.position.x }.min() ?? 0.0
-        var minY = mesh.vertices.map { $0.position.y }.min() ?? 0.0
-        var minZ = mesh.vertices.map { $0.position.z }.min() ?? 0.0
+        let maxX = xAxeValues.max() ?? 0.0
+        let maxY = yAxeValues.max() ?? 0.0
+        let maxZ = zAxeValues.max() ?? 0.0
+        
+        let minX = xAxeValues.min() ?? 0.0
+        let minY = yAxeValues.min() ?? 0.0
+        let minZ = zAxeValues.min() ?? 0.0
         
         box.minBounds = simd_float3(minX, minY, minZ)
         box.maxBounds = simd_float3(maxX, maxY, maxZ)
         
         return box
     }()
+    
+    var collidablePosition: simd_float4 {
+        
+        let clipStage = uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix * simd_float4(1, 1, 0, 1)
+        
+        let afterRasterisationStage = clipStage / clipStage.w
+        
+        //print(uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix.scale * simd_float4(size, 1))
+        print(afterRasterisationStage)
+        
+        return afterRasterisationStage
+    }
     
     init(mesh: BasicMeshProtocol, mass: Float = 1) {
         self.mesh = mesh
@@ -104,7 +122,7 @@ class GameNode: Node, Dynamicable, Collidable {
         modelMatrix.rotate(angle: rotation)
         modelMatrix.scale(vector: scale)
         
-        print(size.x)
+        //print(modelMatrix)
         
         uniforms.modelMatrix = modelMatrix // TRS or (visa-versa SRT) - this is the sequence!
     }

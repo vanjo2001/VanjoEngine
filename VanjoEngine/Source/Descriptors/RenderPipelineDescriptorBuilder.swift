@@ -8,11 +8,13 @@
 import Foundation
 import Metal
 
+
+public enum RenderPipelineDescriptorType: String {
+    case basic
+    case point
+}
+
 class RenderPipelineDescriptorBuilder {
-    
-    enum RenderPipelineDescriptorType: String {
-        case basic
-    }
     
     private var functionBuilder = MTLFunctionBuilder()
     private var vertexDescriptorBuilder = VertexDescriptorBuilder()
@@ -29,6 +31,10 @@ class RenderPipelineDescriptorBuilder {
             renderPipelineDescriptor.fragmentFunction = functionBuilder.getFragmentFunc(for: .basic)
             
             renderPipelineDescriptor.vertexDescriptor = vertexDescriptorBuilder.makeDescriptor(for: .basic)
+            
+        case .point:
+            renderPipelineDescriptor.vertexFunction = functionBuilder.getVertexFunc(for: .point)
+            renderPipelineDescriptor.fragmentFunction = functionBuilder.getFragmentFunc(for: .point)
         }
         
         return renderPipelineDescriptor

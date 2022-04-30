@@ -21,6 +21,12 @@ class CollisionController {
         return nodes.compactMap { $0 as? SceneNode }.first
     }
     
+    /*
+    private var gameNodes: [Node] {
+        return nodes.compactMap { $0 as? GameNode }
+    }
+    */
+    
     
     init(nodes: [Node]) {
         self.nodes = nodes
@@ -31,19 +37,22 @@ class CollisionController {
         
         for node in nodes {
             if let collidable = node as? Collidable {
+                
+                let coordinates = collidable.collidablePosition
+                
                 for border in scene.borders {
-                    checkBorder(border, for: collidable)
+                    checkBorder(node: collidable, border, for: coordinates)
                 }
             }
         }
         
-        func checkBorder(_ axis: SceneNode.Border, for node: Collidable) {
+        func checkBorder(node: Collidable, _ axis: SceneNode.Border, for coordinates: simd_float4) {
             
             switch axis {
             case .xBorder(let xMode):
-                checkBorder(xMode, border: axis, positionValue: abs(node.position.x) + node.size.x / 2)
+                checkBorder(xMode, border: axis, positionValue: coordinates.x)
             case .yBorder(let yMode):
-                checkBorder(yMode, border: axis, positionValue: abs(node.position.y) + node.size.y / 2)
+                checkBorder(yMode, border: axis, positionValue: coordinates.y)
             case .zBorder(let zMode):
                 checkBorder(zMode, border: axis, positionValue: 0) // currently 0
             }
@@ -55,12 +64,12 @@ class CollisionController {
                 case .reverse(let firstSide, let secondSide):
                     
                     //print(border, positionValue)
-                    if abs(positionValue) >= abs(firstSide) {
-                        delegate?.detected(collisions: [], axis)
+                    if positionValue >= secondSide {
+                        delegate?.detected(collisions: [node], axis)
                     }
                     
-                    if abs(positionValue) >= abs(secondSide) {
-                        delegate?.detected(collisions: [], axis)
+                    if positionValue <= firstSide {
+                        delegate?.detected(collisions: [node], axis)
                     }
                     
                 case .solid(let firstSide, let secondSide):
@@ -68,7 +77,6 @@ class CollisionController {
                 }
             }
         }
-        
         
     }
 }

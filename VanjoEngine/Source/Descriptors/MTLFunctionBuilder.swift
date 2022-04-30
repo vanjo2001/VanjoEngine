@@ -11,10 +11,12 @@ import Metal
 class MTLFunctionBuilder {
     enum VertexFunction: String {
         case basic = "vertex_func"
+        case point = "point_vertex"
     }
     
     enum FragmentFunction: String {
         case basic = "fragment_func"
+        case point = "point_fragment"
     }
     
     private var vertexFunctions: [VertexFunction: MTLFunction] = [:]
