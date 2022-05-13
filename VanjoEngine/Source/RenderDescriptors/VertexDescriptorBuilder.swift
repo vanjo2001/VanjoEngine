@@ -22,11 +22,16 @@ class VertexDescriptorBuilder {
         descriptor.attributes[0].format = .float4
         descriptor.attributes[0].bufferIndex = 0
         descriptor.attributes[0].offset = 0
+        
         descriptor.attributes[1].format = .float4
         descriptor.attributes[1].bufferIndex = 0
         descriptor.attributes[1].offset = MemoryLayout<simd_float4>.stride
         
-        descriptor.layouts[0].stride = MemoryLayout<simd_float4>.stride * 2
+        descriptor.attributes[2].format = .float2
+        descriptor.attributes[2].bufferIndex = 0
+        descriptor.attributes[2].offset = MemoryLayout<simd_float4>.stride * 2
+        
+        descriptor.layouts[0].stride = MemoryLayout<Vertex>.stride
         
         return descriptor
     }

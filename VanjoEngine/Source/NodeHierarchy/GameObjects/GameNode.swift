@@ -9,12 +9,6 @@ import Foundation
 import MetalKit
 
 
-protocol Renderable {
-    var mesh: BasicMeshProtocol { get }
-    
-    func render(renderEncoder: MTLRenderCommandEncoder?)
-}
-
 protocol Dynamicable: Nodable {
     var mass: Float { get set }
     var velocity: simd_float2 { get set }
@@ -37,6 +31,8 @@ extension Dynamicable {
         
         position.x += velocity.x * deltaTime
         position.y += velocity.y * deltaTime
+        
+        rotation -= (velocity.y + velocity.x) * deltaTime
     }
     
     func makeImpulse() {
@@ -50,22 +46,17 @@ protocol Collidable: Nodable {
     var physicBox: MDLAxisAlignedBoundingBox { get }
     var size: simd_float3 { get }
     
-    var collidablePosition: simd_float4 { get }
+    func collidablePosition(sceneConstants: SceneConstants) -> simd_float4
 }
 
 extension Collidable {
     var size: simd_float3 {
-        return physicBox.maxBounds - physicBox.minBounds
+        return ((2) / 2) * simd_float3(scale, 1)
     }
 }
 
 
-class GameNode: Node, Dynamicable, Collidable {
-    
-    // MARK: - Renderable protocol
-    
-    var mesh: BasicMeshProtocol
-    
+class GameNode: RenderableNode, Dynamicable, Collidable {
     
     // MARK: - Dynamicable protocol
     
@@ -96,55 +87,25 @@ class GameNode: Node, Dynamicable, Collidable {
         return box
     }()
     
-    var collidablePosition: simd_float4 {
-        
-        let clipStage = uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix * simd_float4(1, 1, 0, 1)
+    func collidablePosition(sceneConstants: SceneConstants) -> simd_float4 {
+        let clipStage = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * model.modelMatrix.position
         
         let afterRasterisationStage = clipStage / clipStage.w
-        
-        //print(uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix.scale * simd_float4(size, 1))
-        print(afterRasterisationStage)
         
         return afterRasterisationStage
     }
     
-    init(mesh: BasicMeshProtocol, mass: Float = 1) {
-        self.mesh = mesh
+    init(mesh: BasicMeshProtocol, imageName: String? = nil, mass: Float = 1) {
         self.mass = mass
+        super.init(mesh: mesh, imageName: imageName)
     }
     
+    
     override func update(deltaTime: Float) {
-        var modelMatrix = matrix_identity_float4x4
-        
         updatePhysicBody(deltaTime: deltaTime)
         
-        modelMatrix.translation(vector: position)
-        modelMatrix.rotate(angle: rotation)
-        modelMatrix.scale(vector: scale)
-        
-        //print(modelMatrix)
-        
-        uniforms.modelMatrix = modelMatrix // TRS or (visa-versa SRT) - this is the sequence!
-    }
-}
-
-
-extension GameNode: Renderable {
-    func render(renderEncoder: MTLRenderCommandEncoder?) {
-        let verticesBuffer = VanjoEngine.shared.device.makeBuffer(bytes: mesh.vertices, length: mesh.length, options: [])
-        let uniformBuffer = VanjoEngine.shared.device.makeBuffer(bytes: &uniforms, length: MemoryLayout<Uniforms>.stride, options: [])
-        
-        let rplsBuilder = RenderPipelineStateBuilder()
-        
-        renderEncoder?.setRenderPipelineState(rplsBuilder.getPipelineState(for: .basic)!)
-        
-        renderEncoder?.setVertexBuffer(verticesBuffer, offset: 0, index: 0)
-        renderEncoder?.setVertexBuffer(uniformBuffer, offset: 0, index: 1)
-        
-        renderEncoder?.drawPrimitives(
-            type: .triangle,
-            vertexStart: 0,
-            vertexCount: mesh.vertices.count
-        )
+        // model matrix calculations, such as: translation, scale, rotate
+        // and saving the result to uniform of the current node
+        super.update(deltaTime: deltaTime)
     }
 }

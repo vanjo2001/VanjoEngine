@@ -12,33 +12,41 @@ using namespace metal;
 struct Vertex {
     float4 position [[ attribute(0) ]];
     float4 color [[ attribute(1) ]];
+    float2 textureCoodinate [[ attribute(2) ]];
 };
-
 
 struct VertexOut {
     float4 position [[ position ]];
     float4 color;
+    float2 textureCoodinate;
 };
 
 
-vertex VertexOut vertex_func(
-                             Vertex vert [[ stage_in ]],
-                             constant Uniforms &uniforms [[ buffer(1) ]]
+vertex VertexOut vertex_func(Vertex vert [[ stage_in ]],
+                             constant ModelConstant &model [[ buffer(ModelConstantIndex) ]],
+                             constant SceneConstants &scene [[ buffer(SceneConstantsIndex) ]]
                              /*unsigned int vid [[ vertex_id ]]*/
 ) {
     VertexOut out;
     
-    out.position = uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix * vert.position;
+    out.position = scene.projectionMatrix * scene.viewMatrix * model.modelMatrix * vert.position;
     
     out.color = vert.color;
+    out.textureCoodinate = vert.textureCoodinate;
+    
     return out;
 }
 
-fragment float4 fragment_func(VertexOut vert [[ stage_in ]]) {
-    return vert.color;
+fragment float4 fragment_func(VertexOut vert [[ stage_in ]],
+                              texture2d<float> texture [[ texture(0) ]]) {
+    
+    constexpr sampler textureSampler (mag_filter::linear,
+                                      min_filter::linear);
+    
+    return texture.sample(textureSampler, vert.textureCoodinate);
 }
 
-// point staff
+// point stuff
 
 struct Point {
     float4 position [[ position ]];

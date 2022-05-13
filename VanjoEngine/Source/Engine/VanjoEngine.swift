@@ -17,6 +17,8 @@ final class VanjoEngine {
     
     private(set) var defaultLibrary: MTLLibrary!
     
+    private(set) var rplsBuilder = RenderPipelineStateBuilder()
+    
     private init() {
         guard let device = MTLCreateSystemDefaultDevice() else {
             fatalError("cannot create DEVICE (MTLCreateSystemDefaultDevice())")

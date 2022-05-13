@@ -91,4 +91,20 @@ class CircleMesh: BasicMesh {
 struct Vertex {
     var position: simd_float4
     var color: simd_float4
+    var textureCoordinate: simd_float2 = .zero // uv coordinates or uv mapping or texture coordinates
+    
+    init(
+        position: simd_float4 = .zero,
+        color: simd_float4 = .zero,
+        textureCoordinate: simd_float2 = .zero
+    ) {
+        self.position = position
+        self.color = color
+        self.textureCoordinate = fromNDCtoNTC
+    }
+    
+    // from Normalized device coordinates (NDC) to Normalized texture coordinates (NTC)
+    var fromNDCtoNTC: simd_float2 {
+        return simd_float2((position.x + 1) / 2, (position.y + 1) / 2)
+    }
 }

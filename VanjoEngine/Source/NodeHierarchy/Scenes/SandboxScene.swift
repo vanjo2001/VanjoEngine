@@ -11,11 +11,13 @@ import UIKit
 
 class SandboxScene: SceneNode {
     override func setupScene() {
-        let ball = GameNode(mesh: CircleMesh(segments: 50))
-        ball.scale = .init(x: 0.1, y: 0.1)
+        let ball = GameNode(mesh: CircleMesh(segments: 50), imageName: "basketball")
+        ball.scale = .init(x: 0.2, y: 0.2)
         add(childNode: ball)
         
+        // later in process aspectRatio changes in 'drawableSizeWillChange' method
         let camera = CameraNode(aspectRatio: 1.0)
+        camera.distance = -3
         cameras = [camera]
     }
     
@@ -31,9 +33,6 @@ class SandboxScene: SceneNode {
     
     override func update(deltaTime: Float) {
         super.update(deltaTime: deltaTime)
-        
-        let gameNode = children.first! as! GameNode
-        //print(gameNode.uniforms.modelMatrix * gameNode.physicBox.maxBounds.x)
     }
     
     // MARK: - Delegates Overriding

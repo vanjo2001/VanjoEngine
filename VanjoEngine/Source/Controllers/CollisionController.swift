@@ -15,32 +15,25 @@ protocol CollisionControllerDelegate: AnyObject {
 class CollisionController {
     weak var delegate: CollisionControllerDelegate?
     
+    private var sceneNode: SceneNode
     private var nodes: [Node]
     
-    private var sceneNode: SceneNode? {
-        return nodes.compactMap { $0 as? SceneNode }.first
-    }
     
-    /*
-    private var gameNodes: [Node] {
-        return nodes.compactMap { $0 as? GameNode }
-    }
-    */
-    
-    
-    init(nodes: [Node]) {
+    init(nodes: [Node], sceneNode: SceneNode) {
         self.nodes = nodes
+        self.sceneNode = sceneNode
     }
     
     func detectSceneCollision() {
-        guard let scene = sceneNode else { return }
         
         for node in nodes {
             if let collidable = node as? Collidable {
                 
-                let coordinates = collidable.collidablePosition
+                let coordinates = collidable.collidablePosition(sceneConstants: sceneNode.sceneConstants)
                 
-                for border in scene.borders {
+                print("coordinates: \(coordinates.x)")
+                
+                for border in sceneNode.borders {
                     checkBorder(node: collidable, border, for: coordinates)
                 }
             }
@@ -50,7 +43,7 @@ class CollisionController {
             
             switch axis {
             case .xBorder(let xMode):
-                checkBorder(xMode, border: axis, positionValue: coordinates.x)
+                checkBorder(xMode, border: axis, positionValue: coordinates.x - node.size.x)
             case .yBorder(let yMode):
                 checkBorder(yMode, border: axis, positionValue: coordinates.y)
             case .zBorder(let zMode):
@@ -63,14 +56,13 @@ class CollisionController {
                     break
                 case .reverse(let firstSide, let secondSide):
                     
-                    //print(border, positionValue)
                     if positionValue >= secondSide {
                         delegate?.detected(collisions: [node], axis)
                     }
                     
-                    if positionValue <= firstSide {
-                        delegate?.detected(collisions: [node], axis)
-                    }
+//                    if positionValue <= firstSide {
+//                        delegate?.detected(collisions: [node], axis)
+//                    }
                     
                 case .solid(let firstSide, let secondSide):
                     break

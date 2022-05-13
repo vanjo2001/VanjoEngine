@@ -9,38 +9,27 @@ import Foundation
 
 class CameraNode: Node {
     
-    var fov: Float = 90 {
-        didSet {
-            updateProjectionMatrix()
-        }
+    var viewMatrix: matrix_float4x4 {
+        var identity = matrix_identity_float4x4
+        identity.translation(vector: position)
+        identity.rotate(angle: rotation)
+        identity.scale(vector: scale)
+        identity.columns.3.z = distance
+        return identity.inverse
     }
     
-    var aspectRatio: Float {
-        didSet {
-            updateProjectionMatrix()
-        }
+    var projectionMatix: matrix_float4x4 {
+        projectionMatrix(projectionFov: fov.radians, near: 0.001, far: 100.0, aspect: aspectRatio)
     }
+    
+    var fov: Float = 90
+    
+    var aspectRatio: Float
     
     var distance: Float = -3.0
     
     init(aspectRatio: Float) {
         self.aspectRatio = aspectRatio
-    }
-    
-    override func update(deltaTime: Float) {
-        var identity = matrix_identity_float4x4
-        
-        identity.translation(vector: position)
-        identity.rotate(angle: rotation)
-        identity.scale(vector: scale)
-        identity.columns.3.z = distance
-        
-        uniforms.viewMatrix = identity.inverse
-        updateProjectionMatrix()
-    }
-    
-    private func updateProjectionMatrix() {
-        uniforms.projectionMatrix = projectionMatrix(projectionFov: fov.radians, near: 0.001, far: 100.0, aspect: aspectRatio)
     }
     
     private func projectionMatrix(projectionFov fov: Float, near: Float, far: Float, aspect: Float, lhs: Bool = true) -> matrix_float4x4 {

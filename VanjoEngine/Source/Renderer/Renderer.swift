@@ -10,14 +10,12 @@ import MetalKit
 
 final class Renderer: NSObject, MTKViewDelegate {
     
+    // instance for reuse buffers
+    private(set) var bufferStorage = BufferStorageBuilder()
+    
+    // game logic
     private(set) var engine = VanjoEngine.shared
     private(set) var inputController = InputController()
-    
-    private lazy var collisionController: CollisionController = {
-        let controller = CollisionController(nodes: [scene] + scene.children)
-        controller.delegate = scene
-        return controller
-    }()
     
     private var scene = SandboxScene()
     
@@ -34,6 +32,8 @@ final class Renderer: NSObject, MTKViewDelegate {
     
     func draw(in view: MTKView) {
         
+        bufferStorage.syncSemaphore.wait()
+        
         guard
             let currentRenderPassDescriptor = view.currentRenderPassDescriptor,
             let currentDrawable = view.currentDrawable
@@ -48,15 +48,14 @@ final class Renderer: NSObject, MTKViewDelegate {
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: currentRenderPassDescriptor)
         
         scene.update(deltaTime: dt)
-        scene.renderScene(renderEncoder: renderCommandEncoder)
-        collisionController.detectSceneCollision()
+        scene.renderNodeTree(renderEncoder: renderCommandEncoder, buffer: bufferStorage.getBuffer(for: .vertex))
         
         renderCommandEncoder?.endEncoding()
         
         commandBuffer?.present(currentDrawable)
         
         commandBuffer?.addCompletedHandler { [weak self] _ in
-            self?.scene.gpuDidRenderFrame()
+            self?.bufferStorage.syncSemaphore.signal()
         }
         
         commandBuffer?.commit()

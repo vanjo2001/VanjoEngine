@@ -13,6 +13,7 @@
 		87359115279613FB0023D18F /* SceneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A53662796127F00B05D82 /* SceneNode.swift */; };
 		87359117279614430023D18F /* SandboxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87359116279614430023D18F /* SandboxScene.swift */; };
 		87359119279615B50023D18F /* SandboxCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87359118279615B50023D18F /* SandboxCamera.swift */; };
+		875498FA281FFCB70017293F /* BufferStorageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875498F9281FFCB70017293F /* BufferStorageBuilder.swift */; };
 		877BD5BD277C4A3600DD9CD9 /* BasicMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5BC277C4A3600DD9CD9 /* BasicMesh.swift */; };
 		877BD5C0277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5BF277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift */; };
 		877BD5C3277CAA7100DD9CD9 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5C2277CAA7100DD9CD9 /* Shader.metal */; };
@@ -30,6 +31,9 @@
 		878DE5B02799E341001BA77C /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DE5AF2799E341001BA77C /* InputController.swift */; };
 		879833FA278B3A92002B1DD1 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879833F9278B3A92002B1DD1 /* Node.swift */; };
 		87C16CA427809001006926DA /* BasicMeshBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C16CA327809001006926DA /* BasicMeshBuilder.swift */; };
+		87E6ED7328214AB300091FBA /* Texturable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6ED7228214AB300091FBA /* Texturable.swift */; };
+		87E6ED7528214F4B00091FBA /* RenderableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6ED7428214F4B00091FBA /* RenderableNode.swift */; };
+		87E6ED7928216CDB00091FBA /* basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E6ED7828216CDB00091FBA /* basketball.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,7 @@
 		873591122796133F0023D18F /* GameNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNode.swift; sourceTree = "<group>"; };
 		87359116279614430023D18F /* SandboxScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxScene.swift; sourceTree = "<group>"; };
 		87359118279615B50023D18F /* SandboxCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCamera.swift; sourceTree = "<group>"; };
+		875498F9281FFCB70017293F /* BufferStorageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferStorageBuilder.swift; sourceTree = "<group>"; };
 		877BD5BC277C4A3600DD9CD9 /* BasicMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMesh.swift; sourceTree = "<group>"; };
 		877BD5BF277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineDescriptorBuilder.swift; sourceTree = "<group>"; };
 		877BD5C2277CAA7100DD9CD9 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
@@ -59,6 +64,9 @@
 		879833F9278B3A92002B1DD1 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		87C16CA327809001006926DA /* BasicMeshBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMeshBuilder.swift; sourceTree = "<group>"; };
 		87C16CA527824E37006926DA /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		87E6ED7228214AB300091FBA /* Texturable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texturable.swift; sourceTree = "<group>"; };
+		87E6ED7428214F4B00091FBA /* RenderableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderableNode.swift; sourceTree = "<group>"; };
+		87E6ED7828216CDB00091FBA /* basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basketball.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,32 @@
 			path = GameObjects;
 			sourceTree = "<group>";
 		};
+		875574F2282ED748006A9382 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				87815EA4277A5888001A62B2 /* AppDelegate.swift */,
+				87815EA6277A5888001A62B2 /* SceneDelegate.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		875574F3282ED777006A9382 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				87815EA8277A5888001A62B2 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		875574F4282ED79F006A9382 /* UIAppRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				875574F2282ED748006A9382 /* AppDelegates */,
+				875574F3282ED777006A9382 /* ViewControllers */,
+			);
+			path = UIAppRoutine;
+			sourceTree = "<group>";
+		};
 		877BD5BB277C4A1F00DD9CD9 /* Mesh */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,15 +131,16 @@
 			path = Mesh;
 			sourceTree = "<group>";
 		};
-		877BD5BE277C752A00DD9CD9 /* Descriptors */ = {
+		877BD5BE277C752A00DD9CD9 /* RenderDescriptors */ = {
 			isa = PBXGroup;
 			children = (
 				877BD5BF277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift */,
 				877BD5C6277CF9A300DD9CD9 /* RenderPipelineStateBuilder.swift */,
 				877BD5C8277CFA1D00DD9CD9 /* MTLFunctionBuilder.swift */,
 				877BD5CA277D14E300DD9CD9 /* VertexDescriptorBuilder.swift */,
+				875498F9281FFCB70017293F /* BufferStorageBuilder.swift */,
 			);
-			path = Descriptors;
+			path = RenderDescriptors;
 			sourceTree = "<group>";
 		};
 		877BD5C1277CA86C00DD9CD9 /* Shaders */ = {
@@ -135,13 +170,8 @@
 		87815EA3277A5888001A62B2 /* VanjoEngine */ = {
 			isa = PBXGroup;
 			children = (
-				87815EA4277A5888001A62B2 /* AppDelegate.swift */,
-				87815EA6277A5888001A62B2 /* SceneDelegate.swift */,
-				87815EA8277A5888001A62B2 /* ViewController.swift */,
 				87815EB8277A5A42001A62B2 /* Source */,
-				87815EAD277A588A001A62B2 /* Assets.xcassets */,
-				87815EAF277A588A001A62B2 /* LaunchScreen.storyboard */,
-				87815EB2277A588A001A62B2 /* Info.plist */,
+				87E6ED7628216B2700091FBA /* Resources */,
 			);
 			path = VanjoEngine;
 			sourceTree = "<group>";
@@ -149,13 +179,15 @@
 		87815EB8277A5A42001A62B2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				875574F4282ED79F006A9382 /* UIAppRoutine */,
 				87815EBE277A5E61001A62B2 /* Engine */,
 				87815EB9277A5A78001A62B2 /* Renderer */,
-				879833F8278B39C7002B1DD1 /* GameStuff */,
+				879833F8278B39C7002B1DD1 /* NodeHierarchy */,
 				878DE5AC2799D990001BA77C /* Controllers */,
 				877BD5BB277C4A1F00DD9CD9 /* Mesh */,
 				877BD5C1277CA86C00DD9CD9 /* Shaders */,
-				877BD5BE277C752A00DD9CD9 /* Descriptors */,
+				877BD5BE277C752A00DD9CD9 /* RenderDescriptors */,
+				87E6ED7128214A1A00091FBA /* Services */,
 				872F51632789B9DE00F1312A /* Extensions */,
 				87C16CA527824E37006926DA /* Common.h */,
 			);
@@ -205,15 +237,43 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		879833F8278B39C7002B1DD1 /* GameStuff */ = {
+		879833F8278B39C7002B1DD1 /* NodeHierarchy */ = {
 			isa = PBXGroup;
 			children = (
 				879833F9278B3A92002B1DD1 /* Node.swift */,
+				87E6ED7428214F4B00091FBA /* RenderableNode.swift */,
 				873591112796133F0023D18F /* GameObjects */,
 				878A53682796130900B05D82 /* Cameras */,
 				878A53652796126500B05D82 /* Scenes */,
 			);
-			path = GameStuff;
+			path = NodeHierarchy;
+			sourceTree = "<group>";
+		};
+		87E6ED7128214A1A00091FBA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				87E6ED7228214AB300091FBA /* Texturable.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		87E6ED7628216B2700091FBA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				87E6ED7728216BF500091FBA /* images */,
+				87815EAD277A588A001A62B2 /* Assets.xcassets */,
+				87815EAF277A588A001A62B2 /* LaunchScreen.storyboard */,
+				87815EB2277A588A001A62B2 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		87E6ED7728216BF500091FBA /* images */ = {
+			isa = PBXGroup;
+			children = (
+				87E6ED7828216CDB00091FBA /* basketball.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87815EB1277A588A001A62B2 /* LaunchScreen.storyboard in Resources */,
+				87E6ED7928216CDB00091FBA /* basketball.png in Resources */,
 				87815EAE277A588A001A62B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,10 +358,13 @@
 				878DE5AE2799D9C5001BA77C /* CollisionController.swift in Sources */,
 				878DE5B02799E341001BA77C /* InputController.swift in Sources */,
 				877BD5CB277D14E300DD9CD9 /* VertexDescriptorBuilder.swift in Sources */,
+				87E6ED7328214AB300091FBA /* Texturable.swift in Sources */,
 				877BD5C7277CF9A300DD9CD9 /* RenderPipelineStateBuilder.swift in Sources */,
 				87359114279613F80023D18F /* CameraNode.swift in Sources */,
 				87359119279615B50023D18F /* SandboxCamera.swift in Sources */,
 				877BD5C0277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift in Sources */,
+				875498FA281FFCB70017293F /* BufferStorageBuilder.swift in Sources */,
+				87E6ED7528214F4B00091FBA /* RenderableNode.swift in Sources */,
 				87815EA5277A5888001A62B2 /* AppDelegate.swift in Sources */,
 				87359117279614430023D18F /* SandboxScene.swift in Sources */,
 				87359115279613FB0023D18F /* SceneNode.swift in Sources */,
@@ -375,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -431,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -451,7 +515,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22K22HCZ8Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VanjoEngine/Info.plist;
+				INFOPLIST_FILE = VanjoEngine/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -479,7 +543,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22K22HCZ8Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VanjoEngine/Info.plist;
+				INFOPLIST_FILE = VanjoEngine/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
