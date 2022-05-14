@@ -13,6 +13,9 @@
 		87359115279613FB0023D18F /* SceneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A53662796127F00B05D82 /* SceneNode.swift */; };
 		87359117279614430023D18F /* SandboxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87359116279614430023D18F /* SandboxScene.swift */; };
 		87359119279615B50023D18F /* SandboxCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87359118279615B50023D18F /* SandboxCamera.swift */; };
+		874D011128301067006D356D /* libBullet3Collision_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 875575CD28300F3D006A9382 /* libBullet3Collision_xcode4_x64_debug.a */; };
+		874D011228301067006D356D /* libBullet3Dynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 875575D328300F46006A9382 /* libBullet3Dynamics_xcode4_x64_debug.a */; };
+		874D011328301067006D356D /* libLinearMath_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 874D010F2830100C006D356D /* libLinearMath_xcode4_x64_debug.a */; };
 		875498FA281FFCB70017293F /* BufferStorageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875498F9281FFCB70017293F /* BufferStorageBuilder.swift */; };
 		877BD5BD277C4A3600DD9CD9 /* BasicMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5BC277C4A3600DD9CD9 /* BasicMesh.swift */; };
 		877BD5C0277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BD5BF277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift */; };
@@ -36,12 +39,60 @@
 		87E6ED7928216CDB00091FBA /* basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E6ED7828216CDB00091FBA /* basketball.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		874D010E2830100C006D356D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 874D01082830100C006D356D /* LinearMath.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 088D1FA60060579B1A8B1CB5;
+			remoteInfo = LinearMath;
+		};
+		874D011428301201006D356D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 875575C828300F3D006A9382 /* Bullet3Collision.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 27DF5A4722AF4C5C67050E58;
+			remoteInfo = Bullet3Collision;
+		};
+		874D011628301201006D356D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 875575CE28300F46006A9382 /* Bullet3Dynamics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B6963B936C5621F67B345EA;
+			remoteInfo = Bullet3Dynamics;
+		};
+		874D011828301201006D356D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 874D01082830100C006D356D /* LinearMath.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D207B9A5A1E09F4000240E9;
+			remoteInfo = LinearMath;
+		};
+		875575CC28300F3D006A9382 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 875575C828300F3D006A9382 /* Bullet3Collision.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 49E57F3442E443DD02E65BF2;
+			remoteInfo = Bullet3Collision;
+		};
+		875575D228300F46006A9382 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 875575CE28300F46006A9382 /* Bullet3Dynamics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57533930322869B16FFC43FE;
+			remoteInfo = Bullet3Dynamics;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		872F51612789B9D100F1312A /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		873591122796133F0023D18F /* GameNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNode.swift; sourceTree = "<group>"; };
 		87359116279614430023D18F /* SandboxScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxScene.swift; sourceTree = "<group>"; };
 		87359118279615B50023D18F /* SandboxCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCamera.swift; sourceTree = "<group>"; };
+		874D01082830100C006D356D /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "bullet3-3.24/build3/xcode4/LinearMath.xcodeproj"; sourceTree = "<group>"; };
 		875498F9281FFCB70017293F /* BufferStorageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferStorageBuilder.swift; sourceTree = "<group>"; };
+		875575C828300F3D006A9382 /* Bullet3Collision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bullet3Collision.xcodeproj; path = "bullet3-3.24/build3/xcode4/Bullet3Collision.xcodeproj"; sourceTree = "<group>"; };
+		875575CE28300F46006A9382 /* Bullet3Dynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bullet3Dynamics.xcodeproj; path = "bullet3-3.24/build3/xcode4/Bullet3Dynamics.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		877BD5BC277C4A3600DD9CD9 /* BasicMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMesh.swift; sourceTree = "<group>"; };
 		877BD5BF277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineDescriptorBuilder.swift; sourceTree = "<group>"; };
 		877BD5C2277CAA7100DD9CD9 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
@@ -74,6 +125,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				874D011128301067006D356D /* libBullet3Collision_xcode4_x64_debug.a in Frameworks */,
+				874D011228301067006D356D /* libBullet3Dynamics_xcode4_x64_debug.a in Frameworks */,
+				874D011328301067006D356D /* libLinearMath_xcode4_x64_debug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +148,21 @@
 				873591122796133F0023D18F /* GameNode.swift */,
 			);
 			path = GameObjects;
+			sourceTree = "<group>";
+		};
+		874D01092830100C006D356D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				874D010F2830100C006D356D /* libLinearMath_xcode4_x64_debug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		874D011028301067006D356D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		875574F2282ED748006A9382 /* AppDelegates */ = {
@@ -120,6 +189,22 @@
 				875574F3282ED777006A9382 /* ViewControllers */,
 			);
 			path = UIAppRoutine;
+			sourceTree = "<group>";
+		};
+		875575C928300F3D006A9382 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				875575CD28300F3D006A9382 /* libBullet3Collision_xcode4_x64_debug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		875575CF28300F46006A9382 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				875575D328300F46006A9382 /* libBullet3Dynamics_xcode4_x64_debug.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		877BD5BB277C4A1F00DD9CD9 /* Mesh */ = {
@@ -154,8 +239,12 @@
 		87815E98277A5887001A62B2 = {
 			isa = PBXGroup;
 			children = (
+				875575C828300F3D006A9382 /* Bullet3Collision.xcodeproj */,
+				875575CE28300F46006A9382 /* Bullet3Dynamics.xcodeproj */,
+				874D01082830100C006D356D /* LinearMath.xcodeproj */,
 				87815EA3277A5888001A62B2 /* VanjoEngine */,
 				87815EA2277A5888001A62B2 /* Products */,
+				874D011028301067006D356D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -290,6 +379,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				874D011528301201006D356D /* PBXTargetDependency */,
+				874D011728301201006D356D /* PBXTargetDependency */,
+				874D011928301201006D356D /* PBXTargetDependency */,
 			);
 			name = VanjoEngine;
 			productName = VanjoEngine;
@@ -322,12 +414,50 @@
 			mainGroup = 87815E98277A5887001A62B2;
 			productRefGroup = 87815EA2277A5888001A62B2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 875575C928300F3D006A9382 /* Products */;
+					ProjectRef = 875575C828300F3D006A9382 /* Bullet3Collision.xcodeproj */;
+				},
+				{
+					ProductGroup = 875575CF28300F46006A9382 /* Products */;
+					ProjectRef = 875575CE28300F46006A9382 /* Bullet3Dynamics.xcodeproj */;
+				},
+				{
+					ProductGroup = 874D01092830100C006D356D /* Products */;
+					ProjectRef = 874D01082830100C006D356D /* LinearMath.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				87815EA0277A5888001A62B2 /* VanjoEngine */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		874D010F2830100C006D356D /* libLinearMath_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLinearMath_xcode4_x64_debug.a;
+			remoteRef = 874D010E2830100C006D356D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		875575CD28300F3D006A9382 /* libBullet3Collision_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBullet3Collision_xcode4_x64_debug.a;
+			remoteRef = 875575CC28300F3D006A9382 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		875575D328300F46006A9382 /* libBullet3Dynamics_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBullet3Dynamics_xcode4_x64_debug.a;
+			remoteRef = 875575D228300F46006A9382 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		87815E9F277A5888001A62B2 /* Resources */ = {
@@ -375,6 +505,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		874D011528301201006D356D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bullet3Collision;
+			targetProxy = 874D011428301201006D356D /* PBXContainerItemProxy */;
+		};
+		874D011728301201006D356D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bullet3Dynamics;
+			targetProxy = 874D011628301201006D356D /* PBXContainerItemProxy */;
+		};
+		874D011928301201006D356D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LinearMath;
+			targetProxy = 874D011828301201006D356D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		87815EAF277A588A001A62B2 /* LaunchScreen.storyboard */ = {
@@ -447,6 +595,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = VanjoEngine/Source/Common.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/bullet3-3.24/src";
 			};
 			name = Debug;
 		};
@@ -502,6 +651,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = VanjoEngine/Source/Common.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/bullet3-3.24/src";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

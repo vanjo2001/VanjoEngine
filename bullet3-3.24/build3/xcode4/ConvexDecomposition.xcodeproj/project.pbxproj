@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40906BA00D4E220E065C06F2 /* ConvexBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A586F001E40215646052470 /* ConvexBuilder.cpp */; };
+		61FF2D825EAD6F7A392741FB /* ConvexDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 68567B0D2F74046B35FD0EB2 /* ConvexDecomposition.cpp */; };
+		38B6738929F51D0B6E3F78CB /* bestfit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43824C9E38C5388564841AF0 /* bestfit.cpp */; };
+		4E2165386CE744364864462B /* bestfitobb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0677030C0D49537540FB4B30 /* bestfitobb.cpp */; };
+		576345CA0BAC622B7D4435F7 /* cd_hull.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18B861B13EEC2E0955EC2388 /* cd_hull.cpp */; };
+		3A784DA25D6D4E9C058B7BAA /* cd_wavefront.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D3BA75EDD0395447826F3 /* cd_wavefront.cpp */; };
+		7A90321669151D981FE7311F /* concavity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E4D5B3460EC29D3754B3658 /* concavity.cpp */; };
+		066E3D18745472D24722306C /* fitsphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1201463CDD68AD4C1B2673 /* fitsphere.cpp */; };
+		12DD16992EC24944259764E6 /* float_math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3942441D7BC560484CB10E55 /* float_math.cpp */; };
+		3D755E8527350C6018AF191C /* meshvolume.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE4080222E18D40FEC74D8 /* meshvolume.cpp */; };
+		366F44812C476E905ADA2C86 /* planetri.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6318F5F2577A713514885 /* planetri.cpp */; };
+		2CDB7A8022654B9961201046 /* raytri.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0451188F0B09105564FD4EF4 /* raytri.cpp */; };
+		2091406527CE69C474EA6F54 /* splitplane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C214EFA24CA709B62252777 /* splitplane.cpp */; };
+		000774C5408720AC33B22478 /* vlookup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53B1187B707E20C038055303 /* vlookup.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3A586F001E40215646052470 /* ConvexBuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ConvexBuilder.cpp"; path = "../../Extras/ConvexDecomposition/ConvexBuilder.cpp"; sourceTree = "<group>"; };
+		7B856383603961CB110826C3 /* ConvexBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ConvexBuilder.h"; path = "../../Extras/ConvexDecomposition/ConvexBuilder.h"; sourceTree = "<group>"; };
+		68567B0D2F74046B35FD0EB2 /* ConvexDecomposition.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "ConvexDecomposition.cpp"; path = "../../Extras/ConvexDecomposition/ConvexDecomposition.cpp"; sourceTree = "<group>"; };
+		49BC6EF3325D373C707F2B60 /* ConvexDecomposition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ConvexDecomposition.h"; path = "../../Extras/ConvexDecomposition/ConvexDecomposition.h"; sourceTree = "<group>"; };
+		43824C9E38C5388564841AF0 /* bestfit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "bestfit.cpp"; path = "../../Extras/ConvexDecomposition/bestfit.cpp"; sourceTree = "<group>"; };
+		615E176F3510548A542208D1 /* bestfit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "bestfit.h"; path = "../../Extras/ConvexDecomposition/bestfit.h"; sourceTree = "<group>"; };
+		0677030C0D49537540FB4B30 /* bestfitobb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "bestfitobb.cpp"; path = "../../Extras/ConvexDecomposition/bestfitobb.cpp"; sourceTree = "<group>"; };
+		6C2A4A9E555165660C2446F9 /* bestfitobb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "bestfitobb.h"; path = "../../Extras/ConvexDecomposition/bestfitobb.h"; sourceTree = "<group>"; };
+		18B861B13EEC2E0955EC2388 /* cd_hull.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "cd_hull.cpp"; path = "../../Extras/ConvexDecomposition/cd_hull.cpp"; sourceTree = "<group>"; };
+		021F7361703674BB26FE0965 /* cd_hull.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "cd_hull.h"; path = "../../Extras/ConvexDecomposition/cd_hull.h"; sourceTree = "<group>"; };
+		7B4B3346663942253B684284 /* cd_vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "cd_vector.h"; path = "../../Extras/ConvexDecomposition/cd_vector.h"; sourceTree = "<group>"; };
+		0B2D3BA75EDD0395447826F3 /* cd_wavefront.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "cd_wavefront.cpp"; path = "../../Extras/ConvexDecomposition/cd_wavefront.cpp"; sourceTree = "<group>"; };
+		6DAA3B96055941EA7F5E2B17 /* cd_wavefront.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "cd_wavefront.h"; path = "../../Extras/ConvexDecomposition/cd_wavefront.h"; sourceTree = "<group>"; };
+		2E4D5B3460EC29D3754B3658 /* concavity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "concavity.cpp"; path = "../../Extras/ConvexDecomposition/concavity.cpp"; sourceTree = "<group>"; };
+		7CD86F71765E40C647350ABC /* concavity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "concavity.h"; path = "../../Extras/ConvexDecomposition/concavity.h"; sourceTree = "<group>"; };
+		6E1201463CDD68AD4C1B2673 /* fitsphere.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "fitsphere.cpp"; path = "../../Extras/ConvexDecomposition/fitsphere.cpp"; sourceTree = "<group>"; };
+		337344E5336C27327314608E /* fitsphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "fitsphere.h"; path = "../../Extras/ConvexDecomposition/fitsphere.h"; sourceTree = "<group>"; };
+		3942441D7BC560484CB10E55 /* float_math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "float_math.cpp"; path = "../../Extras/ConvexDecomposition/float_math.cpp"; sourceTree = "<group>"; };
+		53A04A9C49322B59089B1F22 /* float_math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "float_math.h"; path = "../../Extras/ConvexDecomposition/float_math.h"; sourceTree = "<group>"; };
+		7CAE4080222E18D40FEC74D8 /* meshvolume.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "meshvolume.cpp"; path = "../../Extras/ConvexDecomposition/meshvolume.cpp"; sourceTree = "<group>"; };
+		0145120261A146FA5A6B6679 /* meshvolume.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "meshvolume.h"; path = "../../Extras/ConvexDecomposition/meshvolume.h"; sourceTree = "<group>"; };
+		4FA6318F5F2577A713514885 /* planetri.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "planetri.cpp"; path = "../../Extras/ConvexDecomposition/planetri.cpp"; sourceTree = "<group>"; };
+		1B106A1727717BBB54C02865 /* planetri.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "planetri.h"; path = "../../Extras/ConvexDecomposition/planetri.h"; sourceTree = "<group>"; };
+		0451188F0B09105564FD4EF4 /* raytri.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "raytri.cpp"; path = "../../Extras/ConvexDecomposition/raytri.cpp"; sourceTree = "<group>"; };
+		7C684F955ADA449E0B8033AA /* raytri.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "raytri.h"; path = "../../Extras/ConvexDecomposition/raytri.h"; sourceTree = "<group>"; };
+		1C214EFA24CA709B62252777 /* splitplane.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "splitplane.cpp"; path = "../../Extras/ConvexDecomposition/splitplane.cpp"; sourceTree = "<group>"; };
+		12E05F96762D363E5D3834B8 /* splitplane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "splitplane.h"; path = "../../Extras/ConvexDecomposition/splitplane.h"; sourceTree = "<group>"; };
+		53B1187B707E20C038055303 /* vlookup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "vlookup.cpp"; path = "../../Extras/ConvexDecomposition/vlookup.cpp"; sourceTree = "<group>"; };
+		7CCA66E577335CD40B6115A1 /* vlookup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "vlookup.h"; path = "../../Extras/ConvexDecomposition/vlookup.h"; sourceTree = "<group>"; };
+		4C7C7DD554AF585E28557EBA /* libConvexDecomposition_xcode4_x64_release.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libConvexDecomposition_xcode4_x64_release.a"; path = "libConvexDecomposition_xcode4_x64_release.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AD621F35F185EE54B9D4506 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20F217B6408157207BA86ECE /* ConvexDecomposition */ = {
+			isa = PBXGroup;
+			children = (
+				49421D445DA04EA00C690102 /* Extras */,
+				3508399D015248000F951572 /* Products */,
+			);
+			name = "ConvexDecomposition";
+			sourceTree = "<group>";
+		};
+		49421D445DA04EA00C690102 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				5B9C0C2025E22401586413B0 /* ConvexDecomposition */,
+			);
+			name = "Extras";
+			sourceTree = "<group>";
+		};
+		5B9C0C2025E22401586413B0 /* ConvexDecomposition */ = {
+			isa = PBXGroup;
+			children = (
+				3A586F001E40215646052470 /* ConvexBuilder.cpp */,
+				7B856383603961CB110826C3 /* ConvexBuilder.h */,
+				68567B0D2F74046B35FD0EB2 /* ConvexDecomposition.cpp */,
+				49BC6EF3325D373C707F2B60 /* ConvexDecomposition.h */,
+				43824C9E38C5388564841AF0 /* bestfit.cpp */,
+				615E176F3510548A542208D1 /* bestfit.h */,
+				0677030C0D49537540FB4B30 /* bestfitobb.cpp */,
+				6C2A4A9E555165660C2446F9 /* bestfitobb.h */,
+				18B861B13EEC2E0955EC2388 /* cd_hull.cpp */,
+				021F7361703674BB26FE0965 /* cd_hull.h */,
+				7B4B3346663942253B684284 /* cd_vector.h */,
+				0B2D3BA75EDD0395447826F3 /* cd_wavefront.cpp */,
+				6DAA3B96055941EA7F5E2B17 /* cd_wavefront.h */,
+				2E4D5B3460EC29D3754B3658 /* concavity.cpp */,
+				7CD86F71765E40C647350ABC /* concavity.h */,
+				6E1201463CDD68AD4C1B2673 /* fitsphere.cpp */,
+				337344E5336C27327314608E /* fitsphere.h */,
+				3942441D7BC560484CB10E55 /* float_math.cpp */,
+				53A04A9C49322B59089B1F22 /* float_math.h */,
+				7CAE4080222E18D40FEC74D8 /* meshvolume.cpp */,
+				0145120261A146FA5A6B6679 /* meshvolume.h */,
+				4FA6318F5F2577A713514885 /* planetri.cpp */,
+				1B106A1727717BBB54C02865 /* planetri.h */,
+				0451188F0B09105564FD4EF4 /* raytri.cpp */,
+				7C684F955ADA449E0B8033AA /* raytri.h */,
+				1C214EFA24CA709B62252777 /* splitplane.cpp */,
+				12E05F96762D363E5D3834B8 /* splitplane.h */,
+				53B1187B707E20C038055303 /* vlookup.cpp */,
+				7CCA66E577335CD40B6115A1 /* vlookup.h */,
+			);
+			name = "ConvexDecomposition";
+			sourceTree = "<group>";
+		};
+		3508399D015248000F951572 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C7C7DD554AF585E28557EBA /* libConvexDecomposition_xcode4_x64_release.a */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F3A6F7E54281A124B9F3922 /* ConvexDecomposition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18A17B9D262B1218007B34A0 /* Build configuration list for PBXNativeTarget "ConvexDecomposition" */;
+			buildPhases = (
+				317238CC5E7A57BE7C7F00D5 /* Resources */,
+				2103742F6BDC65195A0C690D /* Sources */,
+				5AD621F35F185EE54B9D4506 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ConvexDecomposition";
+			productName = "ConvexDecomposition";
+			productReference = 4C7C7DD554AF585E28557EBA /* libConvexDecomposition_xcode4_x64_release.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "ConvexDecomposition" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 20F217B6408157207BA86ECE /* ConvexDecomposition */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F3A6F7E54281A124B9F3922 /* libConvexDecomposition_xcode4_x64_release.a */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		317238CC5E7A57BE7C7F00D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2103742F6BDC65195A0C690D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40906BA00D4E220E065C06F2 /* ConvexBuilder.cpp in Sources */,
+				61FF2D825EAD6F7A392741FB /* ConvexDecomposition.cpp in Sources */,
+				38B6738929F51D0B6E3F78CB /* bestfit.cpp in Sources */,
+				4E2165386CE744364864462B /* bestfitobb.cpp in Sources */,
+				576345CA0BAC622B7D4435F7 /* cd_hull.cpp in Sources */,
+				3A784DA25D6D4E9C058B7BAA /* cd_wavefront.cpp in Sources */,
+				7A90321669151D981FE7311F /* concavity.cpp in Sources */,
+				066E3D18745472D24722306C /* fitsphere.cpp in Sources */,
+				12DD16992EC24944259764E6 /* float_math.cpp in Sources */,
+				3D755E8527350C6018AF191C /* meshvolume.cpp in Sources */,
+				366F44812C476E905ADA2C86 /* planetri.cpp in Sources */,
+				2CDB7A8022654B9961201046 /* raytri.cpp in Sources */,
+				2091406527CE69C474EA6F54 /* splitplane.cpp in Sources */,
+				000774C5408720AC33B22478 /* vlookup.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14C520E609AD54A0121C1980 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				VALID_ARCHS = "x86_64";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "ConvexDecomposition_xcode4_x64_release";
+			};
+			name = "Release";
+		};
+		3F4F6C116A044E64413261D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				VALID_ARCHS = "x86_64";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = "ConvexDecomposition_xcode4_x64_debug";
+			};
+			name = "Debug";
+		};
+		53C826B772B155A546F502DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				VALID_ARCHS = "x86_64";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../Extras/ConvexDecomposition",
+					"../../src",
+				);
+				OBJROOT = "obj/x64/Release/ConvexDecomposition";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Release";
+		};
+		07766FED6953748A20410ED6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				VALID_ARCHS = "x86_64";
+				SDKROOT = macosx;
+				ARCHS = "x86_64";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../Extras/ConvexDecomposition",
+					"../../src",
+				);
+				OBJROOT = "obj/x64/Debug/ConvexDecomposition";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+				);
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = "../../bin";
+			};
+			name = "Debug";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18A17B9D262B1218007B34A0 /* Build configuration list for PBXNativeTarget "libConvexDecomposition_xcode4_x64_release.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C520E609AD54A0121C1980 /* Release */,
+				3F4F6C116A044E64413261D5 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "ConvexDecomposition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53C826B772B155A546F502DF /* Release */,
+				07766FED6953748A20410ED6 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
