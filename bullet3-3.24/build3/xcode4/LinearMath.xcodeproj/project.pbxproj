@@ -265,7 +265,7 @@
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = LinearMath_xcode4_x64_release;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "x86_64 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -316,11 +316,11 @@
 				OBJROOT = obj/x64/Debug/LinearMath;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-ffast-math";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SYMROOT = ../../bin;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "x86_64 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -334,7 +334,7 @@
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = LinearMath_xcode4_x64_debug;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "x86_64 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -382,11 +382,11 @@
 				OBJROOT = obj/x64/Release/LinearMath;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-ffast-math";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SYMROOT = ../../bin;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "x86_64 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
