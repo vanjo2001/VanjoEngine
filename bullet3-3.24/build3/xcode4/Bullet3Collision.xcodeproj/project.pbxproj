@@ -274,7 +274,7 @@
 				SDKROOT = iphoneos;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
 				SYMROOT = ../../bin;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -319,7 +319,7 @@
 				SDKROOT = iphoneos;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
 				SYMROOT = ../../bin;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -335,7 +335,7 @@
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = Bullet3Collision_xcode4_x64_release;
-				VALID_ARCHS = "x86_64 armv7 armv7s arm64";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -350,7 +350,7 @@
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = Bullet3Collision_xcode4_x64_debug;
-				VALID_ARCHS = "x86_64 armv7 armv7s arm64";
+				VALID_ARCHS = "armv6 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};

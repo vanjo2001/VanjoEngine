@@ -37,6 +37,9 @@
 		87E6ED7328214AB300091FBA /* Texturable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6ED7228214AB300091FBA /* Texturable.swift */; };
 		87E6ED7528214F4B00091FBA /* RenderableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6ED7428214F4B00091FBA /* RenderableNode.swift */; };
 		87E6ED7928216CDB00091FBA /* basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E6ED7828216CDB00091FBA /* basketball.png */; };
+		E7FE83FC299C2645002A3F5C /* PhysicsScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7FE83FB299C2645002A3F5C /* PhysicsScene.mm */; };
+		E7FE8409299C2B7D002A3F5C /* libBulletCollision_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE8402299C2B0E002A3F5C /* libBulletCollision_xcode4_x64_debug.a */; };
+		E7FE840A299C2B88002A3F5C /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE8408299C2B1F002A3F5C /* libBulletDynamics_xcode4_x64_debug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,34 @@
 			remoteGlobalIDString = 57533930322869B16FFC43FE;
 			remoteInfo = Bullet3Dynamics;
 		};
+		E7FE8401299C2B0E002A3F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7FE83FD299C2B0E002A3F5C /* BulletCollision.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B7E26302A8E7D853A432F6B;
+			remoteInfo = BulletCollision;
+		};
+		E7FE8407299C2B1F002A3F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7FE8403299C2B1F002A3F5C /* BulletDynamics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3F5869FA3B017C195EC42494;
+			remoteInfo = BulletDynamics;
+		};
+		E7FE840B299C2BBA002A3F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7FE83FD299C2B0E002A3F5C /* BulletCollision.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FC952C744072AA21CC446FA;
+			remoteInfo = BulletCollision;
+		};
+		E7FE840D299C2BBE002A3F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7FE8403299C2B1F002A3F5C /* BulletDynamics.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 71C978FA260D234C7F4348CF;
+			remoteInfo = BulletDynamics;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +149,11 @@
 		87E6ED7228214AB300091FBA /* Texturable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texturable.swift; sourceTree = "<group>"; };
 		87E6ED7428214F4B00091FBA /* RenderableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderableNode.swift; sourceTree = "<group>"; };
 		87E6ED7828216CDB00091FBA /* basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basketball.png; sourceTree = "<group>"; };
+		E7FE83F9299C2645002A3F5C /* VanjoEngine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VanjoEngine-Bridging-Header.h"; sourceTree = "<group>"; };
+		E7FE83FA299C2645002A3F5C /* PhysicsScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsScene.h; sourceTree = "<group>"; };
+		E7FE83FB299C2645002A3F5C /* PhysicsScene.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsScene.mm; sourceTree = "<group>"; };
+		E7FE83FD299C2B0E002A3F5C /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "bullet3-3.24/build3/xcode4/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
+		E7FE8403299C2B1F002A3F5C /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "bullet3-3.24/build3/xcode4/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +161,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FE840A299C2B88002A3F5C /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */,
+				E7FE8409299C2B7D002A3F5C /* libBulletCollision_xcode4_x64_debug.a in Frameworks */,
 				874D011128301067006D356D /* libBullet3Collision_xcode4_x64_debug.a in Frameworks */,
 				874D011228301067006D356D /* libBullet3Dynamics_xcode4_x64_debug.a in Frameworks */,
 				874D011328301067006D356D /* libLinearMath_xcode4_x64_debug.a in Frameworks */,
@@ -241,6 +279,8 @@
 			children = (
 				875575C828300F3D006A9382 /* Bullet3Collision.xcodeproj */,
 				875575CE28300F46006A9382 /* Bullet3Dynamics.xcodeproj */,
+				E7FE83FD299C2B0E002A3F5C /* BulletCollision.xcodeproj */,
+				E7FE8403299C2B1F002A3F5C /* BulletDynamics.xcodeproj */,
 				874D01082830100C006D356D /* LinearMath.xcodeproj */,
 				87815EA3277A5888001A62B2 /* VanjoEngine */,
 				87815EA2277A5888001A62B2 /* Products */,
@@ -268,6 +308,7 @@
 		87815EB8277A5A42001A62B2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E7FE83F8299C2625002A3F5C /* Physics */,
 				875574F4282ED79F006A9382 /* UIAppRoutine */,
 				87815EBE277A5E61001A62B2 /* Engine */,
 				87815EB9277A5A78001A62B2 /* Renderer */,
@@ -279,6 +320,7 @@
 				87E6ED7128214A1A00091FBA /* Services */,
 				872F51632789B9DE00F1312A /* Extensions */,
 				87C16CA527824E37006926DA /* Common.h */,
+				E7FE83F9299C2645002A3F5C /* VanjoEngine-Bridging-Header.h */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -365,6 +407,31 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		E7FE83F8299C2625002A3F5C /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				E7FE83FA299C2645002A3F5C /* PhysicsScene.h */,
+				E7FE83FB299C2645002A3F5C /* PhysicsScene.mm */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		E7FE83FE299C2B0E002A3F5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7FE8402299C2B0E002A3F5C /* libBulletCollision_xcode4_x64_debug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7FE8404299C2B1F002A3F5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7FE8408299C2B1F002A3F5C /* libBulletDynamics_xcode4_x64_debug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,6 +446,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				E7FE840E299C2BBE002A3F5C /* PBXTargetDependency */,
+				E7FE840C299C2BBA002A3F5C /* PBXTargetDependency */,
 				874D011528301201006D356D /* PBXTargetDependency */,
 				874D011728301201006D356D /* PBXTargetDependency */,
 				874D011928301201006D356D /* PBXTargetDependency */,
@@ -400,6 +469,7 @@
 				TargetAttributes = {
 					87815EA0277A5888001A62B2 = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -422,6 +492,14 @@
 				{
 					ProductGroup = 875575CF28300F46006A9382 /* Products */;
 					ProjectRef = 875575CE28300F46006A9382 /* Bullet3Dynamics.xcodeproj */;
+				},
+				{
+					ProductGroup = E7FE83FE299C2B0E002A3F5C /* Products */;
+					ProjectRef = E7FE83FD299C2B0E002A3F5C /* BulletCollision.xcodeproj */;
+				},
+				{
+					ProductGroup = E7FE8404299C2B1F002A3F5C /* Products */;
+					ProjectRef = E7FE8403299C2B1F002A3F5C /* BulletDynamics.xcodeproj */;
 				},
 				{
 					ProductGroup = 874D01092830100C006D356D /* Products */;
@@ -457,6 +535,20 @@
 			remoteRef = 875575D228300F46006A9382 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		E7FE8402299C2B0E002A3F5C /* libBulletCollision_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBulletCollision_xcode4_x64_debug.a;
+			remoteRef = E7FE8401299C2B0E002A3F5C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E7FE8408299C2B1F002A3F5C /* libBulletDynamics_xcode4_x64_debug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBulletDynamics_xcode4_x64_debug.a;
+			remoteRef = E7FE8407299C2B1F002A3F5C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -484,6 +576,7 @@
 				87C16CA427809001006926DA /* BasicMeshBuilder.swift in Sources */,
 				87815EBB277A5A8B001A62B2 /* Renderer.swift in Sources */,
 				87815EA9277A5888001A62B2 /* ViewController.swift in Sources */,
+				E7FE83FC299C2645002A3F5C /* PhysicsScene.mm in Sources */,
 				877BD5C3277CAA7100DD9CD9 /* Shader.metal in Sources */,
 				878DE5AE2799D9C5001BA77C /* CollisionController.swift in Sources */,
 				878DE5B02799E341001BA77C /* InputController.swift in Sources */,
@@ -521,6 +614,16 @@
 			isa = PBXTargetDependency;
 			name = LinearMath;
 			targetProxy = 874D011828301201006D356D /* PBXContainerItemProxy */;
+		};
+		E7FE840C299C2BBA002A3F5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BulletCollision;
+			targetProxy = E7FE840B299C2BBA002A3F5C /* PBXContainerItemProxy */;
+		};
+		E7FE840E299C2BBE002A3F5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BulletDynamics;
+			targetProxy = E7FE840D299C2BBE002A3F5C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -661,9 +764,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 22K22HCZ8Y;
+				DEVELOPMENT_TEAM = AQC3QZMC97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VanjoEngine/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -676,9 +780,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanjo.VanjoEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VanjoEngine/Source/VanjoEngine-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -689,9 +796,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 22K22HCZ8Y;
+				DEVELOPMENT_TEAM = AQC3QZMC97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VanjoEngine/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -704,9 +812,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanjo.VanjoEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VanjoEngine/Source/VanjoEngine-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
