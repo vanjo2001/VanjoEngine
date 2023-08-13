@@ -11,12 +11,21 @@ import MetalKit
 class ViewController: UIViewController {
     
     private lazy var metalView = view as! MTKView
-    private let renderer = Renderer()
+	
+	private let renderer = Renderer()
+	
+	private let inputController = InputController()
+	
+	private var scene = SandboxScene()
     
     override func loadView() {
         view = MTKView()
         metalView.device = renderer.engine.device
-        renderer.inputController.targetView = view
+		
+		renderer.nodeToRender = scene
+		
+		inputController.targetView = view
+		inputController.delegate = scene
     }
     
     override func viewDidLoad() {
@@ -24,7 +33,7 @@ class ViewController: UIViewController {
     }
     
     override var next: UIResponder? {
-        return renderer.inputController
+        return inputController
     }
 }
 

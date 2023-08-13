@@ -9,7 +9,7 @@
 #include "../Common.h"
 using namespace metal;
 
-struct Vertex {
+struct VertexIn {
     float4 position [[ attribute(0) ]];
     float4 color [[ attribute(1) ]];
     float2 textureCoodinate [[ attribute(2) ]];
@@ -22,7 +22,7 @@ struct VertexOut {
 };
 
 
-vertex VertexOut vertex_func(Vertex vert [[ stage_in ]],
+vertex VertexOut vertex_func(VertexIn vert [[ stage_in ]],
                              constant ModelConstant &model [[ buffer(ModelConstantIndex) ]],
                              constant SceneConstants &scene [[ buffer(SceneConstantsIndex) ]]
                              /*unsigned int vid [[ vertex_id ]]*/

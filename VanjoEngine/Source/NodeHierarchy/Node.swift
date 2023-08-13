@@ -24,7 +24,7 @@ class Node: Nodable {
     var scale = simd_float2(x: 1, y: 1)
     var rotation: Float = 0.0
     
-    final func add(childNode: Node) {
+	func add(childNode: Node) {
         children.append(childNode)
         childNode.parent = self
     }

@@ -11,9 +11,15 @@ import UIKit
 
 class SandboxScene: SceneNode {
     override func setupScene() {
+		
         let ball = GameNode(mesh: CircleMesh(segments: 50), imageName: "basketball")
         ball.scale = .init(x: 0.2, y: 0.2)
         add(childNode: ball)
+		
+		let wall = RenderableNode(mesh: SquareMesh())
+		wall.position = .init(x: 0, y: 0)
+		add(childNode: wall)
+		
         
         // later in process aspectRatio changes in 'drawableSizeWillChange' method
         let camera = CameraNode(aspectRatio: 1.0)
@@ -25,9 +31,6 @@ class SandboxScene: SceneNode {
         let x = (-1 + (point.x / (UIScreen.main.bounds.width / 2))) * CGFloat(camera.aspectRatio)
         let y = 1 - (point.y / (UIScreen.main.bounds.height / 2))
         //print(CGPoint(x: x, y: y))
-        if let node = children.first as? Collidable {
-            //print(node.size)
-        }
         return CGPoint(x: x, y: y)
     }
     
@@ -44,15 +47,16 @@ class SandboxScene: SceneNode {
         }
     }
     
-    override func detected(collisions: [Collidable], _ axis: SceneNode.Border) {
-        guard let node = collisions.first else { return }
-        
-        switch axis {
-        case .xBorder:
-            node.position.x *= -1
-        default:
-            break
-        }
-    }
+//    override func detected(collisions: [Collidable], _ axis: SceneNode.Border) {
+//        guard let node = collisions.first else { return }
+//
+//        switch axis {
+//        case .xBorder:
+//			node.position
+//            node.position.x *= -1
+//        default:
+//            break
+//        }
+//    }
     
 }

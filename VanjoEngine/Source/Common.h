@@ -11,20 +11,25 @@
 #define Common_h
 
 typedef struct {
-    matrix_float4x4 modelMatrix;
+	vector_float4 position;
+	vector_float4 color;
+	vector_float2 textureCoordinate; // uv coordinates or uv mapping or texture coordinates
+} Vertex;
+
+typedef struct {
+	matrix_float4x4 modelMatrix;
 } ModelConstant;
 
 
 typedef struct {
-  matrix_float4x4 viewMatrix;
-  matrix_float4x4 projectionMatrix;
+	matrix_float4x4 viewMatrix;
+	matrix_float4x4 projectionMatrix;
 } SceneConstants;
 
 
-
 typedef enum: int {
-    ModelConstantIndex = 1,
-    SceneConstantsIndex,
+	ModelConstantIndex = 1,
+	SceneConstantsIndex,
 } VertexBufferIndex;
 
 #endif /* Common_h */

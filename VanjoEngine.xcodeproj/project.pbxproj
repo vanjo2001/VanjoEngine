@@ -30,13 +30,13 @@
 		87815EB1277A588A001A62B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87815EAF277A588A001A62B2 /* LaunchScreen.storyboard */; };
 		87815EBB277A5A8B001A62B2 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87815EBA277A5A8B001A62B2 /* Renderer.swift */; };
 		87815EC0277A5F15001A62B2 /* VanjoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87815EBF277A5F15001A62B2 /* VanjoEngine.swift */; };
-		878DE5AE2799D9C5001BA77C /* CollisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DE5AD2799D9C5001BA77C /* CollisionController.swift */; };
 		878DE5B02799E341001BA77C /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DE5AF2799E341001BA77C /* InputController.swift */; };
 		879833FA278B3A92002B1DD1 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879833F9278B3A92002B1DD1 /* Node.swift */; };
 		87C16CA427809001006926DA /* BasicMeshBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C16CA327809001006926DA /* BasicMeshBuilder.swift */; };
 		87E6ED7328214AB300091FBA /* Texturable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6ED7228214AB300091FBA /* Texturable.swift */; };
 		87E6ED7528214F4B00091FBA /* RenderableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6ED7428214F4B00091FBA /* RenderableNode.swift */; };
 		87E6ED7928216CDB00091FBA /* basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E6ED7828216CDB00091FBA /* basketball.png */; };
+		E7E4117F29B3773200E5FD6E /* PhysicsNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7E4117E29B3773200E5FD6E /* PhysicsNode.mm */; };
 		E7FE83FC299C2645002A3F5C /* PhysicsScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7FE83FB299C2645002A3F5C /* PhysicsScene.mm */; };
 		E7FE8409299C2B7D002A3F5C /* libBulletCollision_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE8402299C2B0E002A3F5C /* libBulletCollision_xcode4_x64_debug.a */; };
 		E7FE840A299C2B88002A3F5C /* libBulletDynamics_xcode4_x64_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE8408299C2B1F002A3F5C /* libBulletDynamics_xcode4_x64_debug.a */; };
@@ -141,7 +141,6 @@
 		87815EBF277A5F15001A62B2 /* VanjoEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VanjoEngine.swift; sourceTree = "<group>"; };
 		878A53662796127F00B05D82 /* SceneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneNode.swift; sourceTree = "<group>"; };
 		878A53692796130900B05D82 /* CameraNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNode.swift; sourceTree = "<group>"; };
-		878DE5AD2799D9C5001BA77C /* CollisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionController.swift; sourceTree = "<group>"; };
 		878DE5AF2799E341001BA77C /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		879833F9278B3A92002B1DD1 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		87C16CA327809001006926DA /* BasicMeshBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMeshBuilder.swift; sourceTree = "<group>"; };
@@ -149,6 +148,8 @@
 		87E6ED7228214AB300091FBA /* Texturable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texturable.swift; sourceTree = "<group>"; };
 		87E6ED7428214F4B00091FBA /* RenderableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderableNode.swift; sourceTree = "<group>"; };
 		87E6ED7828216CDB00091FBA /* basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basketball.png; sourceTree = "<group>"; };
+		E7E4117D29B3773200E5FD6E /* PhysicsNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsNode.h; sourceTree = "<group>"; };
+		E7E4117E29B3773200E5FD6E /* PhysicsNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsNode.mm; sourceTree = "<group>"; };
 		E7FE83F9299C2645002A3F5C /* VanjoEngine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VanjoEngine-Bridging-Header.h"; sourceTree = "<group>"; };
 		E7FE83FA299C2645002A3F5C /* PhysicsScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsScene.h; sourceTree = "<group>"; };
 		E7FE83FB299C2645002A3F5C /* PhysicsScene.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsScene.mm; sourceTree = "<group>"; };
@@ -362,7 +363,6 @@
 		878DE5AC2799D990001BA77C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				878DE5AD2799D9C5001BA77C /* CollisionController.swift */,
 				878DE5AF2799E341001BA77C /* InputController.swift */,
 			);
 			path = Controllers;
@@ -412,6 +412,8 @@
 			children = (
 				E7FE83FA299C2645002A3F5C /* PhysicsScene.h */,
 				E7FE83FB299C2645002A3F5C /* PhysicsScene.mm */,
+				E7E4117D29B3773200E5FD6E /* PhysicsNode.h */,
+				E7E4117E29B3773200E5FD6E /* PhysicsNode.mm */,
 			);
 			path = Physics;
 			sourceTree = "<group>";
@@ -578,7 +580,6 @@
 				87815EA9277A5888001A62B2 /* ViewController.swift in Sources */,
 				E7FE83FC299C2645002A3F5C /* PhysicsScene.mm in Sources */,
 				877BD5C3277CAA7100DD9CD9 /* Shader.metal in Sources */,
-				878DE5AE2799D9C5001BA77C /* CollisionController.swift in Sources */,
 				878DE5B02799E341001BA77C /* InputController.swift in Sources */,
 				877BD5CB277D14E300DD9CD9 /* VertexDescriptorBuilder.swift in Sources */,
 				87E6ED7328214AB300091FBA /* Texturable.swift in Sources */,
@@ -586,6 +587,7 @@
 				87359114279613F80023D18F /* CameraNode.swift in Sources */,
 				87359119279615B50023D18F /* SandboxCamera.swift in Sources */,
 				877BD5C0277C756900DD9CD9 /* RenderPipelineDescriptorBuilder.swift in Sources */,
+				E7E4117F29B3773200E5FD6E /* PhysicsNode.mm in Sources */,
 				875498FA281FFCB70017293F /* BufferStorageBuilder.swift in Sources */,
 				87E6ED7528214F4B00091FBA /* RenderableNode.swift in Sources */,
 				87815EA5277A5888001A62B2 /* AppDelegate.swift in Sources */,
@@ -767,7 +769,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AQC3QZMC97;
+				DEVELOPMENT_TEAM = 23LJVS2GTK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VanjoEngine/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -799,7 +801,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AQC3QZMC97;
+				DEVELOPMENT_TEAM = 23LJVS2GTK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VanjoEngine/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

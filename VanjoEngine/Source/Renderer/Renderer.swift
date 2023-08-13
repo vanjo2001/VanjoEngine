@@ -7,27 +7,23 @@
 
 import MetalKit
 
+protocol RendererProtocol {
+	var nodeToRender: SceneNode? { get set }
+}
 
-final class Renderer: NSObject, MTKViewDelegate {
+
+final class Renderer: NSObject, MTKViewDelegate, RendererProtocol {
     
     // instance for reuse buffers
     private(set) var bufferStorage = BufferStorageBuilder()
     
-    // game logic
     private(set) var engine = VanjoEngine.shared
-    private(set) var inputController = InputController()
+	
+	var nodeToRender: SceneNode?
     
-    private var scene = SandboxScene()
-    
-    override init() {
-        super.init()
-        
-        inputController.delegate = scene
-    }
-    
-    
+	
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        scene.drawableSizeWillChange(aspectRatio: Float(size.width / size.height), actualSize: view.frame.size)
+		nodeToRender?.drawableSizeWillChange(aspectRatio: Float(size.width / size.height), actualSize: view.frame.size)
     }
     
     func draw(in view: MTKView) {
@@ -47,8 +43,8 @@ final class Renderer: NSObject, MTKViewDelegate {
         
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: currentRenderPassDescriptor)
         
-        scene.update(deltaTime: dt)
-        scene.renderNodeTree(renderEncoder: renderCommandEncoder, buffer: bufferStorage.getBuffer(for: .vertex))
+		nodeToRender?.update(deltaTime: dt)
+		nodeToRender?.renderNodeTree(renderEncoder: renderCommandEncoder, buffer: bufferStorage.getBuffer(for: .vertex))
         
         renderCommandEncoder?.endEncoding()
         

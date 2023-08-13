@@ -47,7 +47,14 @@ class RenderableNode: Node, Renderable, Texturable {
         //let verticesBuffer = VanjoEngine.shared.device.makeBuffer(bytes: mesh.vertices, length: mesh.length, options: [])
         
         // reusing vertex buffer insted of creating MTLBuffer (makeBuffer(bytes:...) each frame
+		
+//		let buffer: MTLBuffer! = VanjoEngine.shared.device.makeBuffer(
+//			length: MemoryLayout<Vertex>.stride * 1000,
+//			options: [.storageModeShared]
+//		)
+		
         let bufferPointer = buffer.contents()
+		
         let verticesPointer = bufferPointer.bindMemory(to: Vertex.self, capacity: mesh.vertices.count)
         
         let verticesBuffer = UnsafeMutableBufferPointer(start: verticesPointer, count: mesh.vertices.count)

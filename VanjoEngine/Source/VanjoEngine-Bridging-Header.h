@@ -3,3 +3,5 @@
 //
 
 #import "Common.h"
+#import "PhysicsScene.h"
+#import "PhysicsNode.h"

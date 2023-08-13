@@ -7,16 +7,9 @@
 
 import Foundation
 import Metal
-import CoreGraphics
 
-
-class SceneNode: Node, Renderable, InputControllerDelegate, CollisionControllerDelegate {
-    
-    private lazy var collisionController: CollisionController = {
-        let controller = CollisionController(nodes: self.children, sceneNode: self)
-        controller.delegate = self
-        return controller
-    }()
+class SceneNode: Node, Renderable, InputControllerDelegate {
+	private let physics: PhysicsScene = .init()
     
     var sceneConstants: SceneConstants = SceneConstants(
         viewMatrix: matrix_identity_float4x4,
@@ -24,8 +17,6 @@ class SceneNode: Node, Renderable, InputControllerDelegate, CollisionControllerD
     )
     
     private(set) var sceneSize: CGSize = .zero
-    
-    private(set) var borders: [Border] = [.xBorder(.reverse(-1, 1)), .yBorder(.reverse(-1, 1))]
     
     var cameras: [CameraNode] = []
     
@@ -37,6 +28,8 @@ class SceneNode: Node, Renderable, InputControllerDelegate, CollisionControllerD
     
     override init() {
         super.init()
+		physics.delegate = self
+		
         setupScene()
     }
     
@@ -51,14 +44,29 @@ class SceneNode: Node, Renderable, InputControllerDelegate, CollisionControllerD
             index: Int(SceneConstantsIndex.rawValue)
         )
     }
+	
+	override func add(childNode: Node) {
+		super.add(childNode: childNode)
+		
+		if let node = childNode as? Dynamicable {
+			
+//			//convert self to unmanaged object
+			let anUnmanaged = Unmanaged<PhysicsNode>.passUnretained(node.physics)
+			//get raw data pointer
+			let opaque = anUnmanaged.toOpaque()
+			
+			self.physics.addNode(opaque)
+		}
+	}
     
     override func update(deltaTime: Float) {
         super.update(deltaTime: deltaTime)
+		
+		physics.update(withDelta: deltaTime)
+		
         cameras.forEach { $0.update(deltaTime: deltaTime) }
         
         updateSceneConstants()
-        
-        collisionController.detectSceneCollision()
     }
     
     func drawableSizeWillChange(aspectRatio: Float, actualSize: CGSize) {
@@ -78,34 +86,10 @@ class SceneNode: Node, Renderable, InputControllerDelegate, CollisionControllerD
     
     /// You can override this mehtod to handle touch events. The default implementation does nothing
     func didTouch(for point: CGPoint) {}
-    
-    /// You can override this mehtod to handle collision nodes with scene borders. The default implementation does nothing
-    func detected(collisions: [Collidable], _ axis: Border) {}
 }
 
-
-extension SceneNode {
-    enum Border: CustomStringConvertible {
-        
-        case xBorder(Mode = .infinity)
-        case yBorder(Mode = .infinity)
-        case zBorder(Mode = .infinity)
-        
-        enum Mode {
-            case infinity
-            case solid(Float, Float)
-            case reverse(Float, Float)
-        }
-        
-        var description: String {
-            switch self {
-            case .xBorder(_):
-                return "xBorder"
-            case .yBorder(_):
-                return "yBorder"
-            case .zBorder(_):
-                return "zBorder"
-            }
-        }
-    }
+extension SceneNode: PhysicsSceneCollisionDelegate {
+	func collision() {
+		print("collision")
+	}
 }
