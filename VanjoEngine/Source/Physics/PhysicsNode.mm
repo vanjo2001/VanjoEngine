@@ -69,7 +69,7 @@
 			
 			mesh->addTriangle(bv1, bv2, bv3);
 		}
-		   _shape = new btBvhTriangleMeshShape(mesh, true);
+		_shape = new btBvhTriangleMeshShape(mesh, true);
 	}
 }
 
@@ -104,7 +104,7 @@
 	_body->setUserPointer((__bridge void*)self);
 	
 	//9
-	_body->setLinearFactor(btVector3(1,1,0));
+	_body->setLinearFactor(btVector3(0.3,1,0));
 }
 
 -(void)setPosition:(simd_float3)position
@@ -132,6 +132,24 @@
 	{
 		//6
 		return 0;
+	}
+}
+
+-(simd_float3)scale {
+	if (_body) {
+		btVector3 scaleVector = _shape->getLocalScaling();
+		return simd_make_float3(scaleVector.getX(), scaleVector.getY(), scaleVector.getZ());
+	}
+	
+	return simd_make_float3(0.0, 0.0, 0.0);
+}
+
+-(void)setScale:(simd_float3)scale {
+	if (_body) {
+		_shape->setLocalScaling(btVector3(scale.x, scale.y, scale.z));
+		
+		//idk is this call needed to us when we change object's scale
+		//((btCollisionWorld *)_world.dynamicWorld)->updateSingleAabb(_body);
 	}
 }
 

@@ -20,9 +20,9 @@ class RenderableNode: Node, Renderable, Texturable {
     
     var model = ModelConstant(modelMatrix: matrix_identity_float4x4)
     
-    init(mesh: BasicMeshProtocol, imageName: String? = nil) {
+	init(id: String, mesh: BasicMeshProtocol, imageName: String? = nil) {
         self.mesh = mesh
-        super.init()
+		super.init(id: id)
         
         guard let imageName = imageName else { return }
         self.texture = loadNewTexture(device: VanjoEngine.shared.device, imageName: imageName)
@@ -48,10 +48,10 @@ class RenderableNode: Node, Renderable, Texturable {
         
         // reusing vertex buffer insted of creating MTLBuffer (makeBuffer(bytes:...) each frame
 		
-//		let buffer: MTLBuffer! = VanjoEngine.shared.device.makeBuffer(
-//			length: MemoryLayout<Vertex>.stride * 1000,
-//			options: [.storageModeShared]
-//		)
+		let buffer: MTLBuffer! = VanjoEngine.shared.device.makeBuffer(
+			length: MemoryLayout<Vertex>.stride * 1000,
+			options: [.storageModeShared]
+		)
 		
         let bufferPointer = buffer.contents()
 		

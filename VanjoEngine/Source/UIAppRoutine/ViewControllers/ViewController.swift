@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 	
 	private let inputController = InputController()
 	
-	private var scene = SandboxScene()
+	private var scene = SandboxScene(id: "SandboxScene")
     
     override func loadView() {
         view = MTKView()

@@ -12,18 +12,28 @@ import UIKit
 class SandboxScene: SceneNode {
     override func setupScene() {
 		
-        let ball = GameNode(mesh: CircleMesh(segments: 50), imageName: "basketball")
-        ball.scale = .init(x: 0.2, y: 0.2)
+		let ball = GameNode(id: "ball", mesh: CircleMesh(segments: 50), imageName: "basketball")
         add(childNode: ball)
 		
-		let wall = RenderableNode(mesh: SquareMesh())
-		wall.position = .init(x: 0, y: 0)
+		ball.scale = .init(x: 0.2, y: 0.2)
+		ball.position = .init(x: 0, y: 3)
+		
+		let wall = GameNode(id: "wall", mesh: SquareMesh(), mass: 0.0)
 		add(childNode: wall)
 		
+		// we should update
+		wall.scale = .init(x: 3.0, y: 0.1)
+		wall.position = .init(x: 0, y: -2.0)
+		
+		let rightWall = GameNode(id: "rightWall", mesh: SquareMesh(), mass: 0.0)
+		add(childNode: rightWall)
+		
+		rightWall.scale = .init(x: 0.1, y: 3.0)
+		rightWall.position = .init(x: 1.5, y: 0.0)
         
         // later in process aspectRatio changes in 'drawableSizeWillChange' method
         let camera = CameraNode(aspectRatio: 1.0)
-        camera.distance = -3
+		camera.distance = -3.0
         cameras = [camera]
     }
     

@@ -10,6 +10,8 @@ import ModelIO
 import Metal
 
 protocol Nodable: AnyObject {
+	var id: String { get }
+	
     var position: simd_float2 { get set }
     var scale: simd_float2 { get set }
     var rotation: Float { get set }
@@ -17,12 +19,17 @@ protocol Nodable: AnyObject {
 
 
 class Node: Nodable {
+	var id: String
     var parent: Node?
     var children: [Node] = []
     
     var position = simd_float2(0, 0)
     var scale = simd_float2(x: 1, y: 1)
     var rotation: Float = 0.0
+	
+	init(id: String) {
+		self.id = id
+	}
     
 	func add(childNode: Node) {
         children.append(childNode)

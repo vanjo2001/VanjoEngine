@@ -30,6 +30,7 @@ class CameraNode: Node {
     
     init(aspectRatio: Float) {
         self.aspectRatio = aspectRatio
+		super.init(id: "camera")
     }
     
     private func projectionMatrix(projectionFov fov: Float, near: Float, far: Float, aspect: Float, lhs: Bool = true) -> matrix_float4x4 {

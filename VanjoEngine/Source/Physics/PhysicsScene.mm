@@ -92,6 +92,10 @@
 	}
 }
 
+- (void *)dynamicWorld {
+	return _world;
+}
+
 - (void)dealloc {
 	delete _world;
 	delete _solver;

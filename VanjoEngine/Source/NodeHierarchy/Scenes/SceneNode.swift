@@ -26,8 +26,8 @@ class SceneNode: Node, Renderable, InputControllerDelegate {
         return cameras[currentCameraIndex]
     }
     
-    override init() {
-        super.init()
+	override init(id: String) {
+		super.init(id: id)
 		physics.delegate = self
 		
         setupScene()
@@ -49,6 +49,8 @@ class SceneNode: Node, Renderable, InputControllerDelegate {
 		super.add(childNode: childNode)
 		
 		if let node = childNode as? Dynamicable {
+			
+			node.physics.world = self.physics
 			
 //			//convert self to unmanaged object
 			let anUnmanaged = Unmanaged<PhysicsNode>.passUnretained(node.physics)

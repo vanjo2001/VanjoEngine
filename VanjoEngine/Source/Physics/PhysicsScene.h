@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addNode:(void *)node;
 - (void)updateWithDelta:(float)aDelta;
 
+@property (nonatomic, readonly) void *dynamicWorld;
 @property (nonatomic, weak) id<PhysicsSceneCollisionDelegate> delegate;
 
 @end

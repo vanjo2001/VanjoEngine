@@ -14,16 +14,9 @@ protocol Dynamicable: Nodable {
 	var physics: PhysicsNode { get }
     
     func makeImpulse()
-    
-    func updatePhysicBody(deltaTime: Float)
 }
 
 extension Dynamicable {
-    func updatePhysicBody(deltaTime: Float) {
-        position.x = physics.position().x
-        position.y = physics.position().y
-    }
-    
     func makeImpulse() {
 		physics.applyImpulse()
     }
@@ -32,7 +25,28 @@ extension Dynamicable {
 
 class GameNode: RenderableNode, Dynamicable {
 	
-	var physics: PhysicsNode
+	let physics: PhysicsNode
+	
+	override var position: simd_float2 {
+		get {
+			return simd_float2(physics.position().x, physics.position().y)
+		}
+		
+		set {
+			physics.setPosition(simd_float3(newValue.x, newValue.y, 0.0))
+		}
+	}
+	
+	
+	override var scale: simd_float2 {
+		get {
+			simd_float2(physics.scale().x, physics.scale().y)
+		}
+		
+		set {
+			physics.setScale(simd_float3(x: newValue.x, y: newValue.y, z: 0.0))
+		}
+	}
     
     // MARK: - Collidable protocol
     
@@ -44,7 +58,7 @@ class GameNode: RenderableNode, Dynamicable {
         return afterRasterisationStage
     }
     
-    init(mesh: BasicMeshProtocol, imageName: String? = nil, mass: Float = 1) {
+	init(id: String, mesh: BasicMeshProtocol, imageName: String? = nil, mass: Float = 1) {
 		
 		physics = PhysicsNode(
 			mass: mass,
@@ -53,12 +67,11 @@ class GameNode: RenderableNode, Dynamicable {
 			vertices: mesh.vertices.pointer(),
 			vertexCount: UInt32(mesh.vertices.count)
 		)
-        super.init(mesh: mesh, imageName: imageName)
+		super.init(id: id, mesh: mesh, imageName: imageName)
     }
     
     
     override func update(deltaTime: Float) {
-        updatePhysicBody(deltaTime: deltaTime)
 		debugPrint("physics.position(): \(physics.position())")
         // model matrix calculations, such as: translation, scale, rotate
         // and saving the result to uniform of the current node

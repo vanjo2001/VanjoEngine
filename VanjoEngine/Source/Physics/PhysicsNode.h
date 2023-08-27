@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Common.h"
+#import "PhysicsScene.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,11 +20,15 @@ NS_ASSUME_NONNULL_BEGIN
 				 vertexCount:(unsigned int)vertexCount;
 
 @property (nonatomic, readonly) void *rigidBody;
+@property (nonatomic, weak) PhysicsScene *world;
 
 @property (nonatomic, assign)   int tag;
 
 -(simd_float3)position;
 -(void)setPosition:(simd_float3)position;
+
+-(simd_float3)scale;
+-(void)setScale:(simd_float3)scale;
 
 -(void)setRotationX:(float)rotationX;
 -(float)rotationX;
